@@ -1,5 +1,3 @@
-# SWEPROJECT
+# Meet Our Team
 
-Meet Our Team
-  Nahum Tadesse
-  
+- [Nahum Tadesse](./nahumresume.md)
