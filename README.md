@@ -7,4 +7,5 @@ Welcome to our repository for the SWE 3313 group project!<br><br>We are excited 
 # Meet Our Team
 
 - [Nahum Tadesse](./nahumresume.md)
+- [Amanuel Tadesse](AmanuelResume.md)
   
