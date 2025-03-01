@@ -1,5 +1,5 @@
 # Amanuel Tsegaye  
-📍 **Location:** Kennesaw, GA  
+📍 **Location:** Marietta, GA  
 📧 **Email:** [atsegaye@students.kennesaw.edu](mailto:atsegaye@students.kennesaw.edu)  
 🔗 **LinkedIn:** [Amanuel-Tsegaye](https://www.linkedin.com/in/amanueltsegaye)  
 
