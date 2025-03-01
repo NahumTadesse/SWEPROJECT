@@ -43,7 +43,10 @@ Adaptive developer with expertise in C# and Java, with a strong foundation in da
 
 ---
 
+
 ## Skills & Interests
 - **Programming Languages:** C#, Java, SQL, Access  
 - **Interests:** Philosophy, Drawing, Regional History, Soccer, Travel  
-- **Languages:** Fluent in Turkish  
+- **Languages:** Fluent in Turkish
+
+<!-- The file was made by Amanuel T -->
