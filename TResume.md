@@ -184,3 +184,7 @@
 🔹 API Development & Integrations: REST APIs | Cloud Deployments | Third-Party API Integrations  
 🔹 Security & Encryption: GPG Encryption | SHA-256 Hashing | Secure Data Handling  
 🔹 Performance Optimization: System Tuning | Task Automation  
+```
+-
+---
+*Some sections of this resume were refined with AI assistance for clarity and presentation.*
