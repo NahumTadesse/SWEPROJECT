@@ -121,7 +121,7 @@
 
 ### 🤖 **Discord Bot Automation**  
 📌 *Python, JavaScript, SQL*  
-✔ Built **3+ Discord bots** for automation, handling **500+ API requests daily**  
+✔ Built **3+ Discord bots** for automation, handling **50+ API requests daily**  
 ✔ Integrated **SQL storage**, improving **data retrieval by 40%**  
 ✔ Reduced **bot response time by 50%** through **optimized API calls**  
 
