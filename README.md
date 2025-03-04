@@ -23,3 +23,8 @@ Welcome to our repository for the SWE 3313 group project!<br><br>We are excited 
 - We are utilizing YouTrack to manage our project tasks and track our progress effectively.
 
 For a detailed explanation of what technologies and tools we are using and why, click [here](link-to-detailed-explanation.md).
+
+# Gantt Chart
+
+- Click [here](link-to-gantt-chart-in-youtrack) to view our detailed project Gantt Chart on YouTrack, outlining our timeline and task scheduling.
+
