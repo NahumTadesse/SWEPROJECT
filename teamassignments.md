@@ -26,7 +26,7 @@
 
 ## Tools and Workflow
 
-- **Codebase**: Java using IntelliJ IDE
+- **Codebase**: Java, using IntelliJ IDE
 - **Database**: SQLite
 - **Project Tracking**: YouTrack
 
