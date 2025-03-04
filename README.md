@@ -10,3 +10,8 @@ Welcome to our repository for the SWE 3313 group project!<br><br>We are excited 
 - [Amanuel Tadesse](AmanuelResume.md)
 - [Efe Akbas](EfeAkbasresume.md)
 - [Tyler Clanton](TResume.md)
+## Team Assignments
+
+- **Overview**: Our project team consists of four key roles: Group Leader, Technical Lead, and two Developers. Each member is tasked with specific responsibilities that align with their skills to efficiently drive the project towards completion.
+- **Purpose**: This setup ensures that all aspects of the shoe store website, from backend functionality to frontend design, are crafted with attention to detail.
+- **Detailed Roles and Tasks**: For a more detailed breakdown of each team member's assignments and tasks, see our dedicated document [teamassigments.md].
