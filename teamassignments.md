@@ -1,4 +1,4 @@
-# Java Shoe Store Project - Team Roles and Tasks
+# Team Assignments
 
 ## Team Overview
 
