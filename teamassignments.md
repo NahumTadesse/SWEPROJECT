@@ -5,7 +5,7 @@
 ### Nahum Tadesse - Group Leader
 - **Description**: Nahum will oversee all project management aspects, ensuring that the development aligns with set goals and timelines. He will coordinate team activities and ensure smooth execution of project phases.
 - **Tasks**:
- - Organize the initial project setup and outline the scope.
+  1.Organize the initial project setup and outline the scope.
   2. Manage the project's timeline and ensure milestones are met.
   3. Handle team meetings to track progress and resolve issues.
   4. Review and merge pull requests for major features like the shopping cart and login system.
