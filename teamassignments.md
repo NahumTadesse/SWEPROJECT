@@ -1,7 +1,5 @@
 # Team Assignments
 
-## Team Overview
-
 ### Nahum Tadesse - Group Leader
 - **Responsibilities**:
   - Coordinate project setup and define the project scope.
