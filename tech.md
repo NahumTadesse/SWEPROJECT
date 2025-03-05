@@ -1,7 +1,7 @@
 # Technology Selection
 
 ## Introduction
-This document outlines the technology choices for our online shoe store project. We have selected Java, SQLite, IntelliJ IDEA, and YouTrack as the technologies to help us build our online sneaker store.
+This document outlines the technology choices for our online shoe store project. We have selected Java, SQLite, IntelliJ IDEA, Marvel for the UI and YouTrack as the technologies to help us build our online sneaker store.
 
 ## Why Java?
 - **Familiarity**: Java was chosen primarily because it's a language that most team members are already proficient in, which allows us to leverage our existing skills effectively. 
@@ -23,5 +23,5 @@ This document outlines the technology choices for our online shoe store project.
 - **UI**: Per the project we will be using Marvel for our UI.
 
 ## Conclusion
-The technologies selected—Java, SQLite, IntelliJ IDEA, and YouTrack—each play a pivotal role in ensuring our project is not only successful but also efficient and effective. This combination delivers the robustness, flexibility, and user-friendly experience required to build and manage a dynamic online store.
+The technologies selected—Java, SQLite, IntelliJ IDEA, Marvel, and YouTrack—each play a pivotal role in ensuring our project is not only successful but also efficient and effective. This combination delivers the robustness, flexibility, and user-friendly experience required to build and manage a dynamic online store.
 
