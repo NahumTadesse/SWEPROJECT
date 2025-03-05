@@ -22,7 +22,7 @@ Welcome to our repository for the SWE 3313 group project!<br><br>We are excited 
 - We will use a SQLite database to store product and user data creating an efficient data management solution.
 - We are utilizing YouTrack to manage our project tasks and track our progress effectively.
 
-For a detailed explanation of what technologies and tools we are using and why, click [here](tech.md).
+For a detailed explanation of what technologies and tools we are using and why, click [here](https://sweprojectteam5.youtrack.cloud/gantt-charts/226-0).
 
 # Gantt Chart
 
