@@ -1,7 +1,7 @@
 # Technology Stack Overview for Our Java Shoe Store Project
 
 ## Introduction
-This document outlines the technology choices for our online shoe store project. We have selected Java, SQLite, IntelliJ IDEA, and YouTrack as the cornerstone technologies to build a robust and effective retail platform.
+This document outlines the technology choices for our online shoe store project. We have selected Java, SQLite, IntelliJ IDEA, and YouTrack as the technologies to help us build our online sneaker store.
 
 ## Why Java?
 - **Familiarity**: Java was chosen primarily because it's a language that most team members are already proficient in, which allows us to leverage our existing skills effectively. 
