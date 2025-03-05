@@ -26,5 +26,5 @@ For a detailed explanation of what technologies and tools we are using and why, 
 
 # Gantt Chart
 
-- Click [here]([link-to-gantt-chart-in-youtrack](https://sweprojectteam5.youtrack.cloud/gantt-charts/226-0)) to view our detailed project Gantt Chart on YouTrack, outlining our timeline and task scheduling.
+- Click [here](https://sweprojectteam5.youtrack.cloud/gantt-charts/226-0) to view our detailed project Gantt Chart on YouTrack, outlining our timeline and task scheduling.
 
