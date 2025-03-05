@@ -10,7 +10,7 @@ This document outlines the technology choices for our online shoe store project.
 ## Why SQLite?
 - **Simplicity**: SQLite requires minimal setup, allowing us to focus on developing features without worrying about complex database configuration.
 - **Efficiency**: It provides a fast and reliable storage solution for small to medium data loads without the overhead of a full-scale database server.
-- 
+  
 ## Why IntelliJ ?
 - **Smart Coding Assistance**: Offers powerful code completion, refactoring, and analysis, significantly reducing potential bugs and improving code quality.
 - **Cross Platform**: Team members on macOS, Windows, or Linux can use this IDE.
