@@ -21,7 +21,7 @@
 ### Efe Akbas - Developer
 - **Responsibilities**:
   - Build and style the frontend for product pages.
-  - Ensure the site works well on both mobile and desktop.
+  - Ensure the application is working smoothly.
   - Help with connecting the frontend to backend services.
 
 ## Tools and Workflow
