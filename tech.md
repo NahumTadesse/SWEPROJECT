@@ -18,7 +18,9 @@ This document outlines the technology choices for our online shoe store project.
 ## Why YouTrack?
 - **Agile Management**: Offers customizable workflows and supports Agile practices, helping us adapt quickly to changes and manage tasks efficiently.
 - **Project Tracking**: Provides detailed issue tracking and project reporting tools that will allow to see the bigger picture of our porject in real-time.
-  
+
+## Marvel
+- **UI**: Per the project we will be using Marvel for our UI.
 
 ## Conclusion
 The technologies selected—Java, SQLite, IntelliJ IDEA, and YouTrack—each play a pivotal role in ensuring our project is not only successful but also efficient and effective. This combination delivers the robustness, flexibility, and user-friendly experience required to build and manage a dynamic online store.
