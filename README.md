@@ -28,3 +28,5 @@ For a detailed explanation of what technologies and tools we are using and why, 
 
 - Click [here](https://sweprojectteam5.youtrack.cloud/gantt-charts/226-0) to view our detailed project Gantt Chart on YouTrack, outlining our timeline and task scheduling.
 
+# Link to Loom Video
+Click [here](https://www.loom.com/share/5daf5ec3185e47469d332c0e944c73da?sid=9950fb01-bfb8-4937-b339-8abd2bf112c2) to watch
