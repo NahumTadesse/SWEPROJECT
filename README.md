@@ -6,10 +6,10 @@ Welcome to our repository for the SWE 3313 group project! We welcome to our onli
 
 # Meet Our Team
 
-- [Nahum Tadesse](./nahumresume.md)
-- [Amanuel Tsegaye](AmanuelResume.md)
-- [Efe Akbas](EfeAkbasresume.md)
-- [Tyler Clanton](TResume.md)
+- [Nahum Tadesse](0x22/resumes/nahumresume.md)
+- [Amanuel Tsegaye](0x22/resumes/AmanuelResume.md)
+- [Efe Akbas](0x22/resumes/EfeAkbasresume.md)
+- [Tyler Clanton](0x22/resumes/TResume.md)
 # Team Assignments
 
 - **Overview**: Our project team consists of four key roles: Group Leader, Technical Lead, and two Developers. Each member is tasked with specific responsibilities that align with their skills to efficiently drive the project towards completion.
