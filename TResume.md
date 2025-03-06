@@ -72,19 +72,19 @@
 ## 📸 **Screenshots**
 ### 🎬 **Video List & Homepage**
 📌 *Users can browse, play, comment, and manage videos.*  
-![🎥 Video List & Homepage](0x22/hpage.png)
+![🎥 Video List & Homepage](0x22/assets/hpage.png)
 
 ### 🔧 **Admin Dashboard**
 📌 *Admin panel for managing videos, user interactions, and site moderation.*  
-![⚙️ Admin Dashboard](0x22/panel.png)
+![⚙️ Admin Dashboard](0x22/assets/panel.png)
 
 ### ➕ **Add New Video Page**
 📌 *Admin feature to add videos using YouTube links, dynamically stored in the database.*  
-![📂 Add New Video Page](0x22/upload.png)
+![📂 Add New Video Page](0x22/assets/upload.png)
 
 ### ✉ **Inbox Functionality for User Messages**
 📌 *Users can send messages directly to the site owner for feedback or inquiries.*  
-![📩 Message Feature](0x22/msg.png)
+![📩 Message Feature](0x22/assets/msg.png)
 
 ---
 
