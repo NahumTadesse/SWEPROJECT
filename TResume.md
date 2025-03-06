@@ -39,7 +39,7 @@
 ---
 
 # 🎥 **0θ Video Streaming Platform**
-🔗 **Live Project:** [0θ.com](https://xn--0-emb.com/)  
+🔗 **Live Project:** [0θ.com](https://0x00.xn--0-emb.com/)  
 📌 **Tech Stack:** *PHP, JavaScript, SQL, HTML/CSS, JSON*  
 
 ---
