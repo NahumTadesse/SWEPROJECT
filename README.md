@@ -24,9 +24,28 @@ Welcome to our repository for the SWE 3313 group project! We welcome to our onli
 
 For a detailed explanation of what technologies and tools we are using and why, click [here](Project_Deliverables/docs/tech.md).
 
+
+
 # Gantt Chart
 
 - Click [here](https://sweprojectteam5.youtrack.cloud/gantt-charts/226-0) to view our detailed project Gantt Chart on YouTrack, outlining our timeline and task scheduling.
 
 # Link to Loom Video
 - Click [here](https://www.loom.com/share/5daf5ec3185e47469d332c0e944c73da?sid=9950fb01-bfb8-4937-b339-8abd2bf112c2) to watch
+
+# Project Requirements Overview
+
+In this section, we delve into the detailed requirements provided by our client, which are essential for the successful development of ShoeVault, our online sneaker store. We have categorized these requirements into functional and non-functional, ensuring clarity and alignment with our client's expectations.
+
+## Documentation Links:
+- **Detailed Requirements**: Here, we provide a comprehensive breakdown of all requirements, detailing what ShoeVault must, needs, and wants to have according to the priorities set by our client. [Explore Requirements](#)
+- **Use Case Diagram**: This diagram provides a visual representation of all user interactions and system functionalities, essential for understanding the scope of our project. [See Use Case Diagram](#)
+- **Decision Table**: Displays the logic behind the various user and administrator actions within ShoeVault, aligning with the specified requirements to ensure accurate implementation. [Check Decision Table](#)
+- **Project Presentation**: A concise video presentation that highlights the key requirements, discusses the project's risk management, and our approach to meeting the client's needs. [Watch Presentation](#)
+
+## Understanding Requirements:
+Our development efforts are guided by the specific needs outlined by our client, focusing on creating a user-friendly and efficient online store environment. From user registration to managing transactions, every aspect of ShoeVault is designed with precision to enhance the shopping experience.
+
+## Navigational Guidance:
+Please use the links provided to access detailed documents that explain each component of our project. We encourage stakeholders to review these materials thoroughly to understand the depth and breadth of our planning and execution strategy.
+
