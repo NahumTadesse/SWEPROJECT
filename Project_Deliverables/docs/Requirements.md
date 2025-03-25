@@ -6,7 +6,7 @@
 #### Epic 1: User Authentication
 - **ID:** EPC-1
 - **Priority:** Must Have
-- **Estimated Effort:** 3 days
+- **Estimated Effort:** 4 days
 - **Type:** Functional
 
   ### Story 1: User Account Registration
@@ -33,7 +33,7 @@
 #### Epic 2: Inventory Display and Management
 - **ID:** EPC-2
 - **Priority:** Must Have
-- **Estimated Effort:** 3-4 days
+- **Estimated Effort:** 4-5 days
 - **Type:** Functional
 
   ### Story 1: Display Available Inventory
@@ -67,7 +67,7 @@
 #### Epic 3: Checkout and Payment Processing
 - **ID:** EPC-3
 - **Priority:** Must Have
-- **Estimated Effort:** 4 days
+- **Estimated Effort:** 3-4 days
 - **Type:** Functional
 
   ### Story 1: Checkout Process
@@ -80,7 +80,7 @@
   ### Story 2: Payment Information and Confirmation
   - **ID:** REQ-9
   - **Priority:** Must Have
-  - **Estimated Effort:** 2 days
+  - **Estimated Effort:** 1-2 days
   - **Type:** Functional
   - **Description:** Users must enter shipping and credit card information to proceed with payment. This includes the card's expiration, CVV, and the user's shipping address.
 
