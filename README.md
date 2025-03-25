@@ -43,9 +43,4 @@ In this section, we delve into the detailed requirements provided by our client,
 - **Decision Table**: Displays the logic behind the various user and administrator actions within ShoeVault, aligning with the specified requirements to ensure accurate implementation. [Check Decision Table](#)
 - **Project Presentation**: A concise video presentation that highlights the key requirements, discusses the project's risk management, and our approach to meeting the client's needs. [Watch Presentation](#)
 
-## Understanding Requirements:
-Our development efforts are guided by the specific needs outlined by our client, focusing on creating a user-friendly and efficient online store environment. From user registration to managing transactions, every aspect of ShoeVault is designed with precision to enhance the shopping experience.
-
-## Navigational Guidance:
-Please use the links provided to access detailed documents that explain each component of our project. We encourage stakeholders to review these materials thoroughly to understand the depth and breadth of our planning and execution strategy.
 
