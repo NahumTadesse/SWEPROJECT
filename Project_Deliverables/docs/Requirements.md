@@ -4,7 +4,7 @@
 **Planned Completion: **
 
 #### Epic 1: User Authentication
-- **ID:** EPC-1
+- **ID:** EPIC-1
 - **Priority:** Must Have
 - **Estimated Effort:** 4 days
 - **Type:** Functional
@@ -31,7 +31,7 @@
   - **Description:** Existing admins must be able to convert a regular user account into an admin account.
 
 #### Epic 2: Inventory Display and Management
-- **ID:** EPC-2
+- **ID:** EPIC-2
 - **Priority:** Must Have
 - **Estimated Effort:** 4-5 days
 - **Type:** Functional
@@ -59,7 +59,7 @@
   - **Description:** The user should be able to search the inventory by typing in a search box.
   - 
 #### Epic 3: Checkout and Payment Processing
-- **ID:** EPC-3
+- **ID:** EPIC-3
 - **Priority:** Must Have
 - **Estimated Effort:** 3-4 days
 - **Type:** Functional
@@ -94,7 +94,7 @@
   ## Version 2 Requirements
 
 ### Epic 4: Enhanced Inventory Management
-- **ID:** EPC-4
+- **ID:** EPIC-4
 - **Priority:** Could Have
 - **Estimated Effort:** 2 days
 - **Type:** Functional
@@ -107,7 +107,7 @@
   - **Description:** It would be great if there was a simple user interface to do that, but I need some process regardless if a user interface is too much work for Version 1.
 
 ### Epic 5: Administrative Enhancements
-- **ID:** EPC-5
+- **ID:** EPIC-5
 - **Priority:** Should Have
 - **Estimated Effort:** 2-3 days
 - **Type:** Functional
@@ -134,7 +134,7 @@
   - **Description:** Finally, administrators must have some way to add inventory into the system. How will they add new inventory to the database? They need some approach. I would love it if they could open a page and enter the information (and choose a picture) and it gets added to the database. If that is too hard, they could just enter it into the database manually.
 
 ### Epic 6: Enhancing User Purchase Experience
-- **ID:** EPC-6
+- **ID:** EPIC-6
 - **Priority:** Could Have
 - **Estimated Effort:** 1 day
 - **Type:** Functional
