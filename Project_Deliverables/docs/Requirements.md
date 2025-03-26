@@ -1,7 +1,6 @@
 ## Version 1 Requirements
 
 ### Milestone: Initial System Setup and Core Features Implementation
-**Planned Completion: **
 
 #### Epic 1: User Authentication
 - **ID:** EPIC-1
