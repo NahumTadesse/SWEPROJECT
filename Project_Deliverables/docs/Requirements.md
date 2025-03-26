@@ -1,6 +1,6 @@
 ## Version 1 Requirements
 
-### Milestone: Initial System Setup and Core Features Implementation
+### Milestone: ShoeVault Launch 
 
 #### Epic 1: User Authentication
 - **ID:** EPIC-1
