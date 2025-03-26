@@ -37,7 +37,7 @@ For a detailed explanation of what technologies and tools we are using and why, 
 
 In this section, we delve into the detailed requirements provided by our client, which are essential for the successful development of ShoeVault, our online sneaker store. We have categorized these requirements into functional and non-functional, ensuring clarity and alignment with our client's expectations.
 
-## Documentation Links:
+## Requirements :
 - **Detailed Requirements**: Here, we provide a comprehensive breakdown of our must-have repquirements for version 1, and possible upgrades and updates for version 2. [Requirements](Project_Deliverables/docs/Requirements.md)
 - **Use Case Diagram**: This diagram provides a visual representation of all user interactions and system functionalities, essential for understanding the scope of our project. [See Use Case Diagram](Project_Deliverables/docs/UseCaseFinal.png)
 - **Decision Table**: Displays the logic behind the various user and administrator actions within ShoeVault, aligning with the specified requirements to ensure accurate implementation. [Decision Table](Project_Deliverables/docs/FinalDecisionTable.png)
