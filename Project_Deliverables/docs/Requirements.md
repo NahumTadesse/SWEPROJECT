@@ -1,6 +1,6 @@
 ## Version 1 Requirements
 
-### Milestone: ShoeVault Launch 
+### Milestone: ShoeVault Launch Requirements
 
 #### Epic 1: User Authentication
 - **ID:** EPIC-1
