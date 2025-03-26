@@ -57,35 +57,35 @@
   - **Estimated Effort:** 1 day
   - **Type:** Functional
   - **Description:** The user should be able to search the inventory by typing in a search box.
-
-  ### Story 4: Add to Shopping Cart
-  - **ID:** REQ-7
-  - **Priority:** Must Have
-  - **Estimated Effort:** 1 day
-  - **Type:** Functional
-  - **Description:** Users must be able to add multiple items to a shopping cart from the inventory list.
-
+  - 
 #### Epic 3: Checkout and Payment Processing
 - **ID:** EPC-3
 - **Priority:** Must Have
 - **Estimated Effort:** 3-4 days
 - **Type:** Functional
 
-  ### Story 1: Checkout Process
+  ### Story 1: Add to Shopping Cart
+  - **ID:** REQ-7
+  - **Priority:** Must Have
+  - **Estimated Effort:** 1 day
+  - **Type:** Functional
+  - **Description:** Users must be able to add multiple items to a shopping cart from the inventory list.
+    
+  ### Story 2: Checkout Process
   - **ID:** REQ-8
   - **Priority:** Must Have
   - **Estimated Effort:** 1 day
   - **Type:** Functional
   - **Description:** Users cannot click the Checkout button if the shopping cart is empty. Upon clicking, users must see a list of items, a subtotal, and options to remove items or continue shopping.
 
-  ### Story 2: Payment Information and Confirmation
+  ### Story 3: Payment Information and Confirmation
   - **ID:** REQ-9
   - **Priority:** Must Have
   - **Estimated Effort:** 1-2 days
   - **Type:** Functional
   - **Description:** Users must enter shipping and credit card information to proceed with payment. This includes the card's expiration, CVV, and the user's shipping address.
 
-  ### Story 3: Order Completion and Receipt Display
+  ### Story 4: Order Completion and Receipt Display
   - **ID:** REQ-10
   - **Priority:** Must Have
   - **Estimated Effort:** 1 day
