@@ -5,7 +5,7 @@
 #### Epic 1: User Authentication
 - **ID:** EPIC-1
 - **Priority:** Must Have
-- **Estimated Effort:** 4 days
+- **Estimated Effort:** 5 days
 - **Type:** Functional
 
   ### Story 1: User Account Registration
@@ -39,7 +39,7 @@
 #### Epic 2: Inventory Display and Management
 - **ID:** EPIC-2
 - **Priority:** Must Have
-- **Estimated Effort:** 4-5 days
+- **Estimated Effort:** 3-4 days
 - **Type:** Functional
 - **Description:** User must see a list of all available inventory sorted by highest price to lowest price.
 
@@ -67,7 +67,7 @@
 #### Epic 3: Checkout and Payment Processing
 - **ID:** EPIC-3
 - **Priority:** Must Have
-- **Estimated Effort:** 3-4 days
+- **Estimated Effort:** 4-5 days
 - **Type:** Functional
 
   ### Story 1: Add to Shopping Cart
