@@ -37,7 +37,7 @@ For a detailed explanation of what technologies and tools we are using and why, 
 
 In this section, we delve into the detailed requirements provided by our client. We have created a Requirements Analysis and Elicitation, written detailed reuirements,made a use-case diagram, and a decsion table. 
 
-## Requirements :
+# Requirements :
 
 # Requirements Ellication
 - Here we have notes from the customer meeting. [Requirements Analysis and Elicitation](Project_Deliverables/docs/Elicitation.md)
