@@ -35,7 +35,7 @@ For a detailed explanation of what technologies and tools we are using and why, 
 
 # Project Requirements Overview
 
-In this section, we delve into the detailed requirements provided by our client, which are essential for the successful development of ShoeVault, our online sneaker store. We have categorized these requirements into functional and non-functional, ensuring clarity and alignment with our client's expectations.
+In this section, we delve into the detailed requirements provided by our client. We have created done a Requirements Analysis and Elicitation, written detailed reuirements, and made a use-case diagram as well as a decsion table. 
 
 ## Requirements :
 - **Requirements Ellication**: Here we have notes from the customer meeting. [Requirements Analysis and Elicitation](Project_Deliverables/docs/Elicitation.md)
