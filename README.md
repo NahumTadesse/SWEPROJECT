@@ -42,6 +42,6 @@ In this section, we delve into the detailed requirements provided by our client.
 - **Detailed Requirements**: Here, we provide a comprehensive breakdown of our must-have repquirements for version 1, and possible upgrades and updates for version 2. [Requirements](Project_Deliverables/docs/Requirements.md)
 - **Use Case Diagram**: This diagram provides a visual representation of all user interactions and system functionalities, essential for understanding the scope of our project. [See Use Case Diagram](Project_Deliverables/docs/USE_CASE_DIAGRAM.png)
 - **Decision Table**: Displays the logic behind the various user and administrator actions within ShoeVault, aligning with the specified requirements to ensure accurate implementation. [Decision Table](Project_Deliverables/docs/Decision_Table_1.png)
-- **Project Presentation**: Link to watch our Requirements presination. [Watch Presentation](https://www.loom.com/share/5d91cf001a87454ab1ae01d0d00fd3ab?sid=da2381b5-9d53-4af8-8300-ec1b3d496156)
+- **Project Presentation**: Link to watch our Requirements presination. [Watch Presentation](https://www.dropbox.com/scl/fi/hstid85vner4a9l82r52q/ReqVideo.mp4?rlkey=cn1jaz0vjd682hy3n0lt875wg&st=4zufpmle&dl=0)
 
 
