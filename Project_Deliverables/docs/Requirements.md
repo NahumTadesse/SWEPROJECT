@@ -122,7 +122,7 @@
   - **Priority:** Should Have
   - **Estimated Effort:** 1 day
   - **Type:** Functional
-  - **Description:** An administrator must be able to run a sales report that shows everything purchased and who purchased it. The client would lie to press on a sold item and it shows me the receipt related to that.
+  - **Description:** An administrator must be able to run a sales report that shows everything purchased and who purchased it. The client would like to press on a sold item and it shows me the receipt related to that.
 
   #### Story 3: Manual Inventory Addition
   - **ID:** REQ-14
