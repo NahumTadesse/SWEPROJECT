@@ -49,6 +49,6 @@ In this section, we delve into the detailed requirements provided by our client.
 # Decision Table 
 - Displays the logic behind the various user and administrator actions within ShoeVault, aligning with the specified requirements to ensure accurate implementation. [Decision Table](Project_Deliverables/docs/Decision_Table_1.png)
 # Link to Requirements Loom Video
--Link to watch our Requirements presination. [Watch Presentation](https://www.dropbox.com/scl/fi/hstid85vner4a9l82r52q/ReqVideo.mp4?rlkey=cn1jaz0vjd682hy3n0lt875wg&st=4zufpmle&dl=0)
+- Link to watch our Requirements presination. [Watch Presentation](https://www.dropbox.com/scl/fi/hstid85vner4a9l82r52q/ReqVideo.mp4?rlkey=cn1jaz0vjd682hy3n0lt875wg&st=4zufpmle&dl=0)
 
 
