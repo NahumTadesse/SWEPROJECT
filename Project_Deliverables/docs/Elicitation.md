@@ -11,7 +11,6 @@
 - Confirm Order
 - Receipt after purchase
 - Inventory updates after purchase
-- High-fidelity mockups before coding
 
 ## NEEDS TO HAVE
 - Search inventory by name or description
