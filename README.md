@@ -52,3 +52,8 @@ In this section, we delve into the detailed requirements provided by our client.
 - Click [here](https://www.dropbox.com/scl/fi/hstid85vner4a9l82r52q/ReqVideo.mp4?rlkey=cn1jaz0vjd682hy3n0lt875wg&st=4zufpmle&dl=0) to watch our Requirements presentation.
 
 
+# User Interface:
+
+# UI using Marvel
+- Here is a [link](https://marvelapp.com/prototype/adb43ff) to our UI created using Marvel 
+
