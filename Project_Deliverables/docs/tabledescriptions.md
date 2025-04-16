@@ -1,4 +1,4 @@
-### 📦 Entity Relationship Table
+## Field Descriptions
 
 | Entity       | Field Name         | Type     | Description                              | Related To |
 |--------------|--------------------|----------|------------------------------------------|------------|
