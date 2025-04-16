@@ -5,12 +5,12 @@
 | **User**     | user_id            | PK       | User's unique ID                         |            |
 |              | username           | Text     | Login name (must be unique)              |            |
 |              | password           | Text     | User's login password 6 char min          |            |
-|              | is_admin           | Boolean  | True if the user is an admin             |            |
+|              | is_admin           | Boolean  | Decides if a user has admin privilges            |            |
 | **Product**  | product_id         | PK       | Unique ID for each product               |            |
 |              | name               | Text     | Name of the product                      |            |
 |              | description        | Text     | Short description                        |            |
 |              | price              | Double | Price in dollars                            |            |
-|              | image              | Text     | Image URL or file path                   |            |
+|              | image              | Text     | Image of the product                 |            |
 |              | is_sold            | Boolean  | True if already purchased                |            |
 | **ItemsinCart** | cart_id         | PK       | Unique cart item ID                      |            |
 |              | user_id            | FK       | User who owns this cart item             | User       |
