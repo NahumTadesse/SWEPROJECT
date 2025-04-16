@@ -19,4 +19,4 @@ Spring Boot is the main framework used to build and run the backend of ShoeVault
   We will be using Recat to create the frontend.
   SQLite will be used ofr database and it works well when combined with Java and Springboot
 - Spring Boot Reference Documentation: https://docs.spring.io/spring-boot/docs/current/reference/html/  
-- Spring Boot Getting Started Guide: https://spring.io/guides/gs/spring-boot/
+- Spring Boot Guide: https://spring.io/guides/gs/spring-boot/
