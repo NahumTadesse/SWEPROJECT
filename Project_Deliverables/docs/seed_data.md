@@ -10,14 +10,12 @@ When the application starts, the following data will already exist in the system
 
 ### Product Entity
 
-| product_id | name                   | description                            | price   | image             | is_sold |
-|------------|------------------------|----------------------------------------|---------|-------------------|---------|
-| 101        | Air Jordan 1 OG        | Retro classic in Chicago red           | 220.00  | jordan1.jpg       | FALSE   |
-| 102        | Adidas Yeezy Boost 350 | Iconic Kanye West sneaker              | 300.00  | yeezy350.jpg      | FALSE   |
-| 103        | Nike Dunk Low Panda    | Black and white versatile sneaker      | 160.00  | dunkpanda.jpg     | FALSE   |
-| 104        | New Balance 550 UNC    | University blue low-top sneaker        | 110.00  | nb550unc.jpg      | FALSE   |
-| 105        | Converse Run Star Hike | Platform sole with star branding       | 95.00   | runstarhike.jpg   | FALSE   |
-
+| product_id | name                   | description                                | price   | image               | is_sold |
+|------------|------------------------|--------------------------------------------|---------|---------------------|---------|
+| 101        | Nike Air Mag  | Back to the future edition                  | 15000.00  | air_mag.jpg      | FALSE   |
+| 102        | New Balance        | Comfortable tennis shoe              | 300.00  | new_bal.jpg       | FALSE   |
+| 103        | Nike P6000   | Comfortable Trainners    | 150.00  | p6000.jpg    | TRUE    |
+| 104        | Jordan 1     | Retro Jordan 1 high top            | 110.00  | jordan1.jpg     | FALSE   |
 ### ShippingType Entity
 
 | shipping_type_id | name       | cost  |
