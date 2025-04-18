@@ -4,7 +4,7 @@
 
 | user_id | username      | password       | email                  | is_admin |
 |---------|---------------|----------------|-------------------------|----------|
-| 1       | adminVault    | Admin123!      | admin@shoevault.com     | TRUE     |
+| 1       |ShoeVaultadmin    | Admin123!      | admin@shoevault.com     | TRUE     |
 
 ## Product Entity
 
