@@ -1,14 +1,12 @@
-## Database Seed Data
+# Database Seed Data
 
-When the application starts, the following data will already exist in the system to allow users to register, browse items, and place orders. This is not example data — it's required to make the app functional on first launch.
-
-### User Entity
+## User Entity
 
 | user_id | username      | password       | email                  | is_admin |
 |---------|---------------|----------------|-------------------------|----------|
 | 1       | adminVault    | Admin123!      | admin@shoevault.com     | TRUE     |
 
-### Product Entity
+## Product Entity
 
 | product_id | name                   | description                                | price   | image               | is_sold |
 |------------|------------------------|--------------------------------------------|---------|---------------------|---------|
@@ -16,7 +14,7 @@ When the application starts, the following data will already exist in the system
 | 102        | New Balance        | Comfortable tennis shoe              | 300.00  | new_bal.jpg       | FALSE   |
 | 103        | Nike P6000   | Comfortable Trainners    | 150.00  | p6000.jpg    | TRUE    |
 | 104        | Jordan 1     | Retro Jordan 1 high top            | 110.00  | jordan1.jpg     | FALSE   |
-### ShippingType Entity
+## ShippingType Entity
 
 | shipping_type_id | name       | cost  |
 |------------------|------------|-------|
@@ -24,10 +22,3 @@ When the application starts, the following data will already exist in the system
 | 2                | 3-Day      | 19.00 |
 | 3                | Ground     | 0.00  |
 
-### Summary of Seed Requirements
-
-| Entity         | Why It's Seeded                                 |
-|----------------|--------------------------------------------------|
-| User           | Provides an admin account for initial access     |
-| Product        | Populates the storefront with available items    |
-| ShippingType   | Supports checkout and price calculation logic    |
