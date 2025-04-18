@@ -60,7 +60,7 @@ In this section, we delve into the detailed requirements provided by our client.
 
 # Technanical Design 
 - Implementation Languages[here](Project_Deliverables/docs/implmentationLang.md)
-- Implementation Frameworks can be found [here](Project_Deliverables/docs/imp_frame.md)
+- Implementation Frameworks can be found [here](Project_Deliverables/docs/imp_framework.md)
 - Entitiy Realtionship Diagram can be found [here](Project_Deliverables/docs/erddiagramSV.png)
 - [Table Descriptions](Project_Deliverables/docs/tabledescriptions.md)
 - [Sample Data](Project_Deliverables/docs/sampledata.md)
