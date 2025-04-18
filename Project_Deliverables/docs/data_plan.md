@@ -1,9 +1,6 @@
 # Data Storage Plan
 
-We will use SQLite to store data for our Java Spring Boot application. This ensures data remains saved between sessions and acts like a real-world web store.
-
-
-## What We Are Using
+## What we plan on using
 
 - SQLite as our database
 - Spring Boot as our framework 
@@ -11,7 +8,7 @@ We will use SQLite to store data for our Java Spring Boot application. This ensu
 - JDBC driver to connect to the SQLite file
 
 
-## Why We Chose SQLite
+## Why SQLite
 
 - No server setup required
 - Keeps all data saved even after the app is closed
