@@ -5,15 +5,15 @@ We will use **SQLite** to store data for our Java Spring Boot application. This 
 
 ## What We Are Using
 
-- SQLite as our database engine (file-based, lightweight)
-- Spring Boot as our web framework (Java)
+- SQLite as our database
+- Spring Boot as our framework 
 - Spring Data JPA to manage database access
 - JDBC driver to connect to the SQLite file
 
 
 ## Why We Chose SQLite
 
-- No server setup required — works as a local `.db` file
+- No server setup required
 - Keeps all data saved even after the app is closed
 - Simple to use and perfect for class projects
 - Supports relationships between tables
