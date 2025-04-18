@@ -63,3 +63,4 @@ In this section, we delve into the detailed requirements provided by our client.
 - Entitiy Realtionship Diagram can be found [here](Project_Deliverables/docs/erddiagramSV.png)
 - [Table Descriptions](Project_Deliverables/docs/tabledescriptions.md)
 - [Sample Data](Project_Deliverables/docs/sampledata.md)
+- [Seed Data](Project_Deliverables/docs/seed_data.md)
