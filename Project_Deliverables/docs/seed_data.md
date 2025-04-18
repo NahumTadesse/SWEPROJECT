@@ -1,4 +1,4 @@
-# Database Seed Data
+# Seed Data
 
 ## User Entity
 
