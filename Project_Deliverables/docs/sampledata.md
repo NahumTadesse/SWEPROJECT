@@ -22,7 +22,7 @@
 
 ---
 
-## CartItem Entity
+## ItemsinCart Entity
 
 | cart_id | user_id | product_id |
 |---------|---------|------------|
