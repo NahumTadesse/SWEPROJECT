@@ -12,7 +12,6 @@
 
 - No server setup required
 - Keeps all data saved even after the app is closed
-- Simple to use and perfect for class projects
 - Supports relationships between tables
 
 
