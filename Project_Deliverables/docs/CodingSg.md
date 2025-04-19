@@ -1,5 +1,11 @@
 # Coding Style Guide 
 
+### 1. Naming Conventions
+
+- Use **PascalCase**  for methods and variables (e.g., `OrderController`)
+- Use **camelCase** for class names (e.g., `getUserById`)
+
+  
 ## Uploading onto Git
 
 - Use Git for version control
