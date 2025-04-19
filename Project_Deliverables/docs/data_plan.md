@@ -18,7 +18,7 @@
 
 ## What We Will Do
 
-- Connect our Spring Boot app to an embedded SQLite database
+- Connect our Spring Boot app to SQLite database
 - Store data in a file called shoevault.db
 - Create entity classes for users, products, orders, payments, etc.
 - Use Spring Data JPA to save and retrieve data from the database
