@@ -66,3 +66,4 @@ In this section, we delve into the detailed requirements provided by our client.
 - [Sample Data](Project_Deliverables/docs/sampledata.md)
 - [Seed Data](Project_Deliverables/docs/seed_data.md)
 - [Database Storage Plan](Project_Deliverables/docs/data_plan.md)
+- [Coding Style Guide](Project_Deliverables/docs/CodingSg.md)
