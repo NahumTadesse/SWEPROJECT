@@ -2,8 +2,8 @@
 ### 1. Naming Conventions
 
 - Use PascalCase for class names  
-- Use camelCasefor methods 
-- 
+- Use camelCasefor methods
+  
 ## 2. Uploading onto Git
 
 - Use Git for version control
