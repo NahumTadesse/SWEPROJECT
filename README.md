@@ -67,3 +67,4 @@ In this section, we delve into the detailed requirements provided by our client.
 - [Seed Data](Project_Deliverables/docs/seed_data.md)
 - [Database Storage Plan](Project_Deliverables/docs/data_plan.md)
 - [Coding Style Guide](Project_Deliverables/docs/CodingSg.md)
+- [Techanical Design Video](https://www.dropbox.com/scl/fi/7oi9wq434r8w90bqlljxn/techDesign.mp4?rlkey=h0r93hvd4itxtzd5p2wf52hjq&st=mbpb80pn&dl=0)
