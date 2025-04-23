@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome to ShoeVault</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #eee;
+      font-family: 'Bebas Neue', sans-serif;
+      margin: 0;
+      padding: 40px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .product-card {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      cursor: pointer;
+      text-align: center;
+    }
+    .product-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+    .product-detail {
+      display: none;
+      padding: 20px;
+    }
+    .product-detail.show {
+      display: block;
+    }
+    .back-button {
+      margin-top: 20px;
+      background-color: black;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-family: 'Bebas Neue', sans-serif;
+    }
+  </style>
+</head>
+<body>
+<h1>Explore the Vault</h1>
+<div class="product-grid" id="productGrid">
+  <div class="product-card" onclick="showDetail(0)">
+    <img src="/shoe1.png" alt="Jordan 4 Fire Red">
+  </div>
+  <div class="product-card" onclick="showDetail(1)">
+    <img src="/shoe2.png" alt="Jordan 1 Lost & Found">
+  </div>
+  <div class="product-card" onclick="showDetail(2)">
+    <img src="/shoe3.png" alt="Nike Air Mag Back to the Future">
+  </div>
+  <div class="product-card" onclick="showDetail(3)">
+    <img src="/shoe4.png" alt="Nike p-6000">
+  </div>
+  <div class="product-card" onclick="showDetail(4)">
+    <img src="/shoe5.png" alt="Puma Classic">
+  </div>
+  <div class="product-card" onclick="showDetail(5)">
+    <img src="/shoe6.png" alt="New Balance">
+  </div>
+</div>
+
+<div id="productDetails" class="product-detail">
+  <h2 id="productName">Product Name</h2>
+  <p id="productDescription">Product description goes here.</p>
+  <p id="productPrice">Price: $00.00</p>
+  <button class="back-button" onclick="goBack()">Back to Vault</button>
+</div>
+
+<script>
+  const products = [
+    { name: "Jordan 4 Fired red", description: "Comfort meets style in the Jordan 4 .", price: "$250" },
+    { name: "Jordan 1 Retro", description: "The legend that started it all.", price: "$230" },
+    { name: "Nike Air Mag", description: "All collectors dream shoe. A classic.", price: "$20000" },
+    { name: "Nike P-6000", description: "A comfortable everyday shoe", price: "$150" },
+    { name: "Puma Classic", description: "A classic and timeless silhouette.", price: "$100" },
+    { name: "New Balance", description: "Iconic meets edgy with chunky soles.", price: "$135" }
+  ];
+
+  function showDetail(index) {
+    document.getElementById("productGrid").style.display = "none";
+    const product = products[index];
+    document.getElementById("productName").innerText = product.name;
+    document.getElementById("productDescription").innerText = product.description;
+    document.getElementById("productPrice").innerText = "Price: " + product.price;
+    document.getElementById("productDetails").classList.add("show");
+  }
+
+  function goBack() {
+    document.getElementById("productDetails").classList.remove("show");
+    document.getElementById("productGrid").style.display = "grid";
+  }
+</script>
+</body>
+</html>
