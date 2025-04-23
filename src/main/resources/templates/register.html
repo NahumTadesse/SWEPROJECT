@@ -1,26 +1,72 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Register</title>
+    <meta charset="UTF-8">
+    <title>ShoeVault Register</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #eee;
+            font-family: 'Bebas Neue', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+        .logo {
+            width: 170px;
+            margin-bottom: 10px;
+        }
+        .welcome-text {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .welcome-text h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+        .welcome-text p {
+            margin: 0;
+            font-size: 18px;
+        }
+        .register-box {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        .register-box input, .register-box button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        .register-box button {
+            background-color: black;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .register-box button:hover {
+            background-color: #333;
+        }
+    </style>
 </head>
 <body>
-<h2>Register</h2>
-<form th:action="@{/register}" method="post">
-    <label>Username:</label>
-    <input type="text" name="username" required/><br/><br/>
-
-    <label>Password:</label>
-    <input type="password" name="password" required/><br/><br/>
-
-    <label>Role:</label>
-    <select name="role">
-        <option value="USER">User</option>
-        <option value="ADMIN">Admin</option>
-    </select><br/><br/>
-
-    <button type="submit">Register</button>
-</form>
-
-<p>Already have an account? <a th:href="@{/login}">Login here</a></p>
+<img src="/shoevault-logo.png" alt="ShoeVault Logo" class="logo" />
+<div class="welcome-text">
+    <h1>Welcome to ShoeVault</h1>
+    <p>Your one stop shop for all your shoe needs</p>
+</div>
+<div class="register-box">
+    <form th:action="@{/register}" method="post">
+        <input type="text" name="username" placeholder="Username" required />
+        <input type="password" name="password" placeholder="Password" required />
+        <button type="submit">Register</button>
+    </form>
+</div>
 </body>
 </html>
