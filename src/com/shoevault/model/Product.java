@@ -1,24 +1,20 @@
 package com.shoevault.model;
 
-import jakarta.persistence.*;
-
-@Entity
 public class Product {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long productId;
-
+    private long id;
     private String name;
     private String description;
     private double price;
-    private boolean isSold;
+    private boolean sold;
+    private String imageUrl;
 
-    public Long getProductId() {
-        return productId;
+    // Getters and Setters
+    public long getId() {
+        return id;
     }
 
-    public void setProductId(Long productId) {
-        this.productId = productId;
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -46,10 +42,18 @@ public class Product {
     }
 
     public boolean isSold() {
-        return isSold;
+        return sold;
     }
 
     public void setSold(boolean sold) {
-        isSold = sold;
+        this.sold = sold;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }

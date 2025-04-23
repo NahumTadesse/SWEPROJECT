@@ -1,50 +1,37 @@
 package com.shoevault.model;
 
-import jakarta.persistence.*;
-
-@Entity
 public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long userId;
-
-    @Column(unique = true, nullable = false)
+    private int id;
     private String username;
-
-    @Column(nullable = false)
     private String password;
+    private String role;
 
-    private boolean isAdmin;
+    public User() {}
 
-    public Long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Long userId) {
-        this.userId = userId;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
+    public User(int id, String username, String password, String role) {
+        this.id = id;
         this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
         this.password = password;
+        this.role = role;
     }
+
+    public int getId() { return id; }
+    public void setId(int id) { this.id = id; }
+
+    public String getUsername() { return username; }
+    public void setUsername(String username) { this.username = username; }
+
+    public String getPassword() { return password; }
+    public void setPassword(String password) { this.password = password; }
+
+    public String getRole() { return role; }
+    public void setRole(String role) { this.role = role; }
 
     public boolean isAdmin() {
-        return isAdmin;
+        return role != null && role.equalsIgnoreCase("ADMIN");
     }
 
-    public void setAdmin(boolean admin) {
-        isAdmin = admin;
+    public boolean isUser() {
+        return role != null && role.equalsIgnoreCase("USER");
     }
 }

@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Home - ShoeVault</title>
+</head>
+<body>
+<h1>Welcome, <span th:text="${username}">User</span>!</h1>
+<p>You have successfully logged in.</p>
+
+<a th:href="@{/logout}">Logout</a>
+</body>
+</html>

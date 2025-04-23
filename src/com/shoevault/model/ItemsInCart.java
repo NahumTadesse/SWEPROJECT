@@ -1,37 +1,31 @@
 package com.shoevault.model;
 
-import jakarta.persistence.*;
-
-@Entity
 public class ItemsInCart {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long cartId;
+    private long cartId;
+    private long userId;
+    private long productId;
 
-    private Long userId;
-    private Long productId;
-
-    public Long getCartId() {
+    public long getCartId() {
         return cartId;
     }
 
-    public void setCartId(Long cartId) {
+    public void setCartId(long cartId) {
         this.cartId = cartId;
     }
 
-    public Long getUserId() {
+    public long getUserId() {
         return userId;
     }
 
-    public void setUserId(Long userId) {
+    public void setUserId(long userId) {
         this.userId = userId;
     }
 
-    public Long getProductId() {
+    public long getProductId() {
         return productId;
     }
 
-    public void setProductId(Long productId) {
+    public void setProductId(long productId) {
         this.productId = productId;
     }
 }
