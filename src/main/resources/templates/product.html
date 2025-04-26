@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${product.name}">Product Detail</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #eee;
+            font-family: 'Bebas Neue', sans-serif;
+            margin: 0;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .product-container {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .product-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+
+        .price {
+            font-size: 24px;
+            margin-top: 10px;
+        }
+
+        .description {
+            margin: 20px 0;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .button-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            cursor: pointer;
+            font-family: 'Bebas Neue', sans-serif;
+            border-radius: 6px;
+            font-size: 18px;
+        }
+
+        form {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="product-container">
+    <h2 th:text="${product.name}">Shoe Name</h2>
+    <p class="price" th:text="'$' + ${#numbers.formatDecimal(product.price, 1, 2)}">Price</p>
+    <img class="product-image" th:src="@{${product.imageUrl}}" alt="Product Image"/>
+
+    <div class="button-row">
+        <button onclick="window.location.href='/home'">Back to Vault</button>
+
+        <!-- Add to Cart Form -->
+        <form th:action="@{/cart/add}" method="post">
+            <input type="hidden" name="productId" th:value="${product.id}"/>
+            <button type="submit">Add to Cart</button>
+        </form>
+    </div>
+
+    <p class="description" th:text="${product.description}">Description</p>
+</div>
+</body>
+</html>

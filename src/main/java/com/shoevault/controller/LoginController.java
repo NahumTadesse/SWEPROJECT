@@ -27,6 +27,7 @@ public class LoginController {
         User existingUser = userRepository.findByUsername(user.getUsername());
         if (existingUser != null && existingUser.getPassword().equals(user.getPassword())) {
             session.setAttribute("loggedInUser", existingUser);
+            session.setAttribute("userId", existingUser.getId()); // ✅ ADD THIS LINE
             return "redirect:/home";
         } else {
             model.addAttribute("error", "Invalid username or password");

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Cart</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #eee;
+            font-family: 'Bebas Neue', sans-serif;
+            padding: 40px;
+            margin: 0;
+        }
+        .cart-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .cart-item {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            padding: 15px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .cart-item img {
+            height: 80px;
+        }
+        .info {
+            flex-grow: 1;
+            margin-left: 20px;
+        }
+        .cart-item .price {
+            font-size: 18px;
+            margin-top: 5px;
+        }
+        .remove-form {
+            margin-left: 20px;
+        }
+        .remove-form button {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-family: 'Bebas Neue', sans-serif;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+        .total {
+            font-size: 24px;
+            text-align: right;
+            margin-top: 30px;
+            font-weight: bold;
+        }
+        button {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            cursor: pointer;
+            font-family: 'Bebas Neue', sans-serif;
+            border-radius: 6px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+<div class="cart-container">
+    <h1>Your Cart</h1>
+
+    <!-- Redirect to home if cart is empty -->
+    <div th:if="${#lists.isEmpty(cartItems)}">
+        <script>
+            window.location.href = '/home';
+        </script>
+    </div>
+
+    <!-- Only show if cart is not empty -->
+    <div th:if="${!#lists.isEmpty(cartItems)}">
+        <div th:each="product : ${cartItems}" class="cart-item">
+            <img th:src="@{${product.imageUrl}}" alt="Shoe Image">
+            <div class="info">
+                <h2 th:text="${product.name}">Shoe Name</h2>
+                <p class="price" th:text="'$' + ${#numbers.formatDecimal(product.price, 1, 2)}">Price</p>
+            </div>
+            <form class="remove-form" th:action="@{/cart/remove}" method="post">
+                <input type="hidden" name="productId" th:value="${product.id}" />
+                <button type="submit">Remove</button>
+            </form>
+        </div>
+
+        <div class="total">
+            Total: <span th:text="'$' + ${#numbers.formatDecimal(totalPrice, 1, 2)}">$0.00</span>
+        </div>
+
+        <!-- Pay Now button -->
+        <div style="text-align: center; margin-top: 20px;">
+            <form th:action="@{/checkout}" method="get">
+                <button type="submit">Pay Now</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Always Back to Vault button -->
+    <div style="text-align: center; margin-top: 10px;">
+        <button onclick="window.location.href='/home'">Back to Vault</button>
+    </div>
+</div>
+</body>
+</html>

@@ -38,9 +38,20 @@ public class ProductRepository {
             Product product = new Product();
             product.setId(rs.getLong("id"));
             product.setName(rs.getString("name"));
+            product.setDescription(rs.getString("description")); // ✅ ADD THIS
             product.setPrice(rs.getDouble("price"));
             product.setImageUrl(rs.getString("imageUrl"));
             return product;
         }
     }
+    public void markAsSold(long productId) {
+        String sql = "UPDATE products SET sold = 1 WHERE id = ?";
+        jdbcTemplate.update(sql, productId);
+    }
+    public void markAsAvailable(long productId) {
+        String sql = "UPDATE products SET sold = 0 WHERE id = ?";
+        jdbcTemplate.update(sql, productId);
+    }
+
+
 }

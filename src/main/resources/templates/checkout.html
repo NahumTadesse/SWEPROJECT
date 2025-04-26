@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout - ShoeVault</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #eee;
+            font-family: 'Bebas Neue', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            padding: 40px;
+        }
+        .checkout-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        form input, form select, form button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 16px;
+        }
+        form button {
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        form button:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<div class="checkout-container">
+    <h1>Checkout</h1>
+
+    <form th:action="@{/confirmOrder}" method="post">
+
+        <!-- Shipping Address -->
+        <input type="text" name="shippingAddress" placeholder="Shipping Address" required />
+
+        <!-- Phone Number -->
+        <input type="text" name="phoneNumber" placeholder="Phone Number (10 digits)"
+               pattern="\d{10}" maxlength="10" title="Phone number must be 10 digits" required />
+
+        <!-- Credit Card Number -->
+        <input type="text" name="cardNumber" placeholder="Credit Card Number (16 digits)"
+               pattern="\d{16}" maxlength="16" title="Card number must be 16 digits" required />
+
+        <!-- Expiration Month -->
+        <input type="text" name="cardExpMonth" placeholder="Expiration Month (MM)"
+               pattern="\d{2}" maxlength="2" title="Expiration month must be 2 digits" required />
+
+        <!-- Expiration Year -->
+        <input type="text" name="cardExpYear" placeholder="Expiration Year (YYYY)"
+               pattern="\d{4}" maxlength="4" title="Expiration year must be 4 digits" required />
+
+        <!-- CVV -->
+        <input type="text" name="cvv" placeholder="CVV (3 digits)"
+               pattern="\d{3}" maxlength="3" title="CVV must be 3 digits" required />
+
+        <!-- Shipping Method -->
+        <select name="shippingSpeed" required>
+            <option value="" disabled selected>Select Shipping Method</option>
+            <option value="Overnight">Overnight - $29.00</option>
+            <option value="3-Day">3-Day - $19.00</option>
+            <option value="Ground">Ground - Free</option>
+        </select>
+
+        <!-- Confirm Order Button -->
+        <button type="submit">Confirm Order</button>
+    </form>
+
+    <div style="text-align: center; margin-top: 20px;">
+        <button onclick="window.location.href='/cart'">Back to Cart</button>
+    </div>
+</div>
+
+</body>
+</html>
