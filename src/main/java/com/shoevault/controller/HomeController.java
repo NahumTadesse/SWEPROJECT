@@ -30,14 +30,18 @@ public class HomeController {
             return "redirect:/login";
         }
 
-        model.addAttribute("username", loggedInUser.getUsername());
+        model.addAttribute("user", loggedInUser); // ✅ Pass user object
 
-        // Get IDs of products in the cart
+        // Get cart items for this user
         Set<Long> productIdsInCart = cartRepository.findAll().stream()
+                .filter(item -> item.getUserId() == loggedInUser.getId())
                 .map(item -> item.getProductId())
                 .collect(Collectors.toSet());
 
-        // Filter out sold products and products in cart
+        int cartItemCount = productIdsInCart.size(); // ✅ Count how many items are in cart
+        model.addAttribute("cartItemCount", cartItemCount);
+
+        // Load products that are NOT sold and NOT already added to cart
         List<Product> products = productRepository.findAll().stream()
                 .filter(p -> !p.isSold() && !productIdsInCart.contains(p.getId()))
                 .sorted((p1, p2) -> Double.compare(p2.getPrice(), p1.getPrice()))

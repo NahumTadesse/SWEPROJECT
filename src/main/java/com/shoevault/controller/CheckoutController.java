@@ -45,7 +45,6 @@ public class CheckoutController {
             HttpSession session,
             Model model
     ) {
-        // ✅ Correct fix to safely pull userId
         Integer userIdInt = (Integer) session.getAttribute("userId");
         Long userId = (userIdInt != null) ? userIdInt.longValue() : null;
 
@@ -107,7 +106,6 @@ public class CheckoutController {
 
     @PostMapping("/completeOrder")
     public String completeOrder(HttpSession session, Model model) {
-        // ✅ Correct fix to safely pull userId
         Integer userIdInt = (Integer) session.getAttribute("userId");
         Long userId = (userIdInt != null) ? userIdInt.longValue() : null;
 
@@ -170,7 +168,12 @@ public class CheckoutController {
         // Clear user's cart
         cartRepository.clearCart(userId);
 
-        // Pass grandTotal to receipt.html
+        // Pass needed attributes to the receipt page
+        model.addAttribute("shippingAddress", shippingAddress);
+        model.addAttribute("cardLast4", cardNumber.substring(cardNumber.length() - 4));
+        model.addAttribute("subtotal", subtotal);
+        model.addAttribute("tax", tax);
+        model.addAttribute("shippingCost", shippingCost);
         model.addAttribute("grandTotal", grandTotal);
 
         return "receipt";

@@ -16,18 +16,26 @@ public class RegistrationController {
     @GetMapping("/register")
     public String showRegistrationForm(Model model) {
         model.addAttribute("user", new User());
-        return "register";
+        return "register"; // Show register.html
     }
 
     @PostMapping("/register")
-    public String registerUser(@ModelAttribute("user") User user, Model model) {
-        if (userRepository.findByUsername(user.getUsername()) != null) {
+    public String registerUser(@RequestParam("username") String username,
+                               @RequestParam("password") String password,
+                               @RequestParam("role") String role,
+                               Model model) {
+        if (userRepository.findByUsername(username) != null) {
             model.addAttribute("error", "Username already exists");
             return "register";
         }
 
-        user.setRole("USER"); // default role
+        User user = new User();
+        user.setUsername(username);
+        user.setPassword(password);
+        user.setRole(role.toUpperCase()); // Always save role in uppercase: "USER" or "ADMIN"
+
         userRepository.save(user);
-        return "redirect:/login";
+
+        return "redirect:/login"; // After successful registration, go to login page
     }
 }

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Sales Report - ShoeVault</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #eee;
+            font-family: 'Bebas Neue', sans-serif;
+            margin: 0;
+            padding: 40px;
+        }
+        table {
+            width: 100%;
+            background-color: white;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 15px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+        th {
+            background-color: #ddd;
+        }
+        a {
+            color: black;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .export-btn {
+            background-color: black;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        .export-btn:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Sales Report</h1>
+
+<a href="/exportSalesCsv" class="export-btn">Download CSV</a>
+
+<table>
+    <thead>
+    <tr>
+        <th>Product Name</th>
+        <th>Price</th>
+        <th>Purchased By</th>
+        <th>Order ID</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="sale : ${salesData}">
+        <td><a th:href="@{'/receipt/' + ${sale.order_id}}" th:text="${sale.name}">Product</a></td>
+        <td th:text="'$' + ${#numbers.formatDecimal(sale.price, 1, 2)}">$0.00</td>
+        <td th:text="${sale.username}">Username</td>
+        <td th:text="${sale.order_id}">Order ID</td>
+    </tr>
+    </tbody>
+</table>
+
+<a href="/home">Back to Home</a>
+
+</body>
+</html>

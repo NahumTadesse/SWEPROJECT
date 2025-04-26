@@ -6,9 +6,7 @@ import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class LoginController {
@@ -17,27 +15,30 @@ public class LoginController {
     private UserRepository userRepository;
 
     @GetMapping("/login")
-    public String showLoginPage(Model model) {
-        model.addAttribute("user", new User());
-        return "login";
+    public String showLoginForm() {
+        return "login"; // Show login.html
     }
 
     @PostMapping("/login")
-    public String login(@ModelAttribute("user") User user, Model model, HttpSession session) {
-        User existingUser = userRepository.findByUsername(user.getUsername());
-        if (existingUser != null && existingUser.getPassword().equals(user.getPassword())) {
-            session.setAttribute("loggedInUser", existingUser);
-            session.setAttribute("userId", existingUser.getId()); // ✅ ADD THIS LINE
-            return "redirect:/home";
-        } else {
+    public String loginUser(@RequestParam("username") String username,
+                            @RequestParam("password") String password,
+                            HttpSession session,
+                            Model model) {
+        User user = userRepository.findByUsername(username);
+        if (user == null || !user.getPassword().equals(password)) {
             model.addAttribute("error", "Invalid username or password");
             return "login";
         }
+
+        session.setAttribute("loggedInUser", user); // ✅ Save the full User object
+        session.setAttribute("userId", user.getId()); // ✅ Also save userId separately
+
+        return "redirect:/home"; // Go to home page after login
     }
 
     @GetMapping("/logout")
     public String logout(HttpSession session) {
-        session.invalidate();
-        return "redirect:/login";
+        session.invalidate(); // Clear all session data
+        return "redirect:/login"; // Go back to login page
     }
 }

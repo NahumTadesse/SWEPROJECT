@@ -9,11 +9,40 @@
       background-color: #eee;
       font-family: 'Bebas Neue', sans-serif;
       margin: 0;
-      padding: 40px;
+      padding: 0;
+    }
+    .menu {
+      background-color: #ccc;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .menu-left {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+    .menu-right {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+    .menu a {
+      color: black;
+      text-decoration: none;
+      font-size: 20px;
+    }
+    .menu a.disabled {
+      color: grey;
+      pointer-events: none;
+    }
+    .menu a:hover:not(.disabled) {
+      text-decoration: underline;
     }
     h1 {
       text-align: center;
-      margin-bottom: 40px;
+      margin: 40px 0 20px 0;
     }
     .product-grid {
       display: grid;
@@ -21,11 +50,12 @@
       gap: 30px;
       max-width: 1000px;
       margin: 0 auto;
+      padding: 20px;
     }
     .product-card {
       background-color: white;
       border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       overflow: hidden;
       text-align: center;
       padding: 10px;
@@ -39,22 +69,53 @@
       height: 250px;
       object-fit: cover;
       cursor: pointer;
+      border-bottom: 1px solid #ddd;
+      margin-bottom: 10px;
     }
-    .product-card p {
-      font-size: 14px;
-      color: #333;
-      margin: 5px 10px 0 10px;
+    .product-name {
+      font-size: 18px;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      color: black;
+    }
+    .product-price {
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 10px;
     }
   </style>
 </head>
+
 <body>
+
+<!-- ✅ Menu Bar -->
+<div class="menu">
+  <div class="menu-left">
+    <a href="/home">Home</a>
+
+    <!-- ✅ Cart link: always visible, disabled if empty -->
+    <a th:href="${cartItemCount > 0} ? '/cart' : '#'" th:classappend="${cartItemCount == 0} ? 'disabled' : ''">Cart</a>
+
+    <!-- ✅ Admin-only options -->
+    <a href="/salesReport" th:if="${user != null and user.admin}">Sales Report</a>
+    <a href="/addInventory" th:if="${user != null and user.admin}">Add Inventory</a>
+  </div>
+
+  <div class="menu-right">
+    <a href="/logout">Logout</a>
+  </div>
+</div>
+
+<!-- ✅ Main Section -->
 <h1>Explore the Vault</h1>
 
 <div class="product-grid">
   <div class="product-card" th:each="product : ${products}">
     <a th:href="@{'/product/' + ${product.id}}">
-      <img th:src="${product.imageUrl}" th:alt="${product.name}" />
+      <img th:src="@{${product.imageUrl}}" th:alt="${product.name}" />
     </a>
+    <div class="product-name" th:text="${product.name}">Shoe Name</div>
+    <div class="product-price" th:text="'$' + ${#numbers.formatDecimal(product.price, 1, 2)}">$0.00</div>
   </div>
 </div>
 
