@@ -15,11 +15,14 @@ import java.util.Map;
 @Controller
 public class SalesReportController {
 
+    // using JdbcTemplate for database access
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
+        //  show sales report page
     @GetMapping("/salesReport")
     public String showSalesReport(Model model) {
+        //all sold products with order and user info
         String sql = "SELECT p.id AS product_id, p.name, p.price, u.username, o.order_id " +
                 "FROM products p " +
                 "JOIN OrderItem oi ON p.id = oi.product_id " +
@@ -29,12 +32,16 @@ public class SalesReportController {
 
         List<Map<String, Object>> salesData = jdbcTemplate.queryForList(sql);
 
+        // sales data to salesReport.html
         model.addAttribute("salesData", salesData);
+
         return "salesReport";
     }
 
+    // exporting  sales report as a CSV file
     @GetMapping("/exportSalesCsv")
     public void exportSalesReport(HttpServletResponse response) throws IOException {
+        // ✅ Load sold product data again for export
         String sql = "SELECT p.name, p.price, u.username, o.order_id " +
                 "FROM products p " +
                 "JOIN OrderItem oi ON p.id = oi.product_id " +
@@ -44,9 +51,11 @@ public class SalesReportController {
 
         List<Map<String, Object>> salesData = jdbcTemplate.queryForList(sql);
 
+        //HTTP response for CSV download
         response.setContentType("text/csv");
         response.setHeader("Content-Disposition", "attachment; filename=\"sales_report.csv\"");
 
+        //writing CSV content
         PrintWriter writer = response.getWriter();
         writer.println("Product Name,Price,Username,Order ID");
 

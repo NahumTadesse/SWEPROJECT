@@ -107,9 +107,9 @@
     </form>
 
     <!-- back to cart button -->
-    <div style="text-align: center; margin-top: 20px;">
-        <button onclick="window.location.href='/cart'">Back to Cart</button>
-    </div>
+    <form th:action="@{/cart}" method="get" style="margin-top: 20px;">
+        <button type="submit">Back to Cart</button>
+    </form>
 
 </div>
 

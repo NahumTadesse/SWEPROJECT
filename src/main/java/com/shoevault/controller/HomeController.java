@@ -17,37 +17,46 @@ import java.util.stream.Collectors;
 @Controller
 public class HomeController {
 
+    // using the ProductRepository and CartRepository
     @Autowired
     private ProductRepository productRepository;
 
     @Autowired
     private CartRepository cartRepository;
 
+    //show the home page
     @GetMapping("/home")
     public String showHomePage(HttpSession session, Model model) {
+        // get the logged-in user from session
         User loggedInUser = (User) session.getAttribute("loggedInUser");
+
+        //redirect to login if not logged in to make sure the didnt just type home into url
         if (loggedInUser == null) {
             return "redirect:/login";
         }
 
-        model.addAttribute("user", loggedInUser); // ✅ Pass user object
+        //pass user object to check if they are a admin or not because this will
+        model.addAttribute("user", loggedInUser);
 
-        // Get cart items for this user
+        //get all product IDs already in this user's cart
         Set<Long> productIdsInCart = cartRepository.findAll().stream()
                 .filter(item -> item.getUserId() == loggedInUser.getId())
                 .map(item -> item.getProductId())
                 .collect(Collectors.toSet());
 
-        int cartItemCount = productIdsInCart.size(); // ✅ Count how many items are in cart
+        //count how many items are in the cart
+        int cartItemCount = productIdsInCart.size();
         model.addAttribute("cartItemCount", cartItemCount);
 
-        // Load products that are NOT sold and NOT already added to cart
+        //load products that are NOT sold and NOT already in cart
         List<Product> products = productRepository.findAll().stream()
                 .filter(p -> !p.isSold() && !productIdsInCart.contains(p.getId()))
-                .sorted((p1, p2) -> Double.compare(p2.getPrice(), p1.getPrice()))
+                .sorted((p1, p2) -> Double.compare(p2.getPrice(), p1.getPrice())) // Sort high to low by price
                 .collect(Collectors.toList());
 
+        //pass products list to the page
         model.addAttribute("products", products);
-        return "home";
+
+        return "home"; // Show home.html
     }
 }

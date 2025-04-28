@@ -14,31 +14,21 @@ import java.sql.Statement;
 public class ShoevaultApplication {
 
     public static void main(String[] args) {
-        // Step 1: Set up database tables
+        //set up database tables if they don't exist
         createUsersTable();
         createProductsTable();
         createCartTable();
-        createOrdersTable();         // NEW
-        createOrderItemsTable();    // NEW
-        createPaymentsTable();      // NEW
-        insertDemoProductsIfEmpty();
+        createOrdersTable();
+        createOrderItemsTable();
+        createPaymentsTable();
+        insertSeedProductsIfEmpty(); // Insert demo products if database is empty
 
-        // Step 2: Start Spring Boot
+        //starting the Spring Boot application
         SpringApplication.run(ShoevaultApplication.class, args);
 
-        // Step 3: Open browser
-        try {
-            if (Desktop.isDesktopSupported()) {
-                Desktop desktop = Desktop.getDesktop();
-                if (desktop.isSupported(Desktop.Action.BROWSE)) {
-                    desktop.browse(new URI("http://localhost:8081"));
-                }
-            }
-        } catch (Exception e) {
-            System.out.println("❌ Could not open browser: " + e.getMessage());
-        }
     }
 
+    // create users table
     private static void createUsersTable() {
         try (Connection conn = DriverManager.getConnection("jdbc:sqlite:shoedb.db")) {
             Statement stmt = conn.createStatement();
@@ -48,12 +38,13 @@ public class ShoevaultApplication {
                     "password TEXT NOT NULL, " +
                     "role TEXT NOT NULL)";
             stmt.executeUpdate(sql);
-            System.out.println("✅ 'users' table created.");
+            System.out.println("users table created.");
         } catch (Exception e) {
-            System.out.println("❌ Failed to create users table: " + e.getMessage());
+            System.out.println("failed to create users table: " + e.getMessage());
         }
     }
 
+    // create products table
     private static void createProductsTable() {
         try (Connection conn = DriverManager.getConnection("jdbc:sqlite:shoedb.db")) {
             Statement stmt = conn.createStatement();
@@ -65,12 +56,13 @@ public class ShoevaultApplication {
                     "sold BOOLEAN DEFAULT 0, " +
                     "imageUrl TEXT)";
             stmt.executeUpdate(sql);
-            System.out.println("✅ 'products' table created.");
+            System.out.println("products table created.");
         } catch (Exception e) {
-            System.out.println("❌ Failed to create products table: " + e.getMessage());
+            System.out.println("failed to create products table: " + e.getMessage());
         }
     }
 
+    // Create items_in_cart table
     private static void createCartTable() {
         try (Connection conn = DriverManager.getConnection("jdbc:sqlite:shoedb.db")) {
             Statement stmt = conn.createStatement();
@@ -81,12 +73,13 @@ public class ShoevaultApplication {
                     "FOREIGN KEY(user_id) REFERENCES users(id), " +
                     "FOREIGN KEY(product_id) REFERENCES products(id))";
             stmt.executeUpdate(sql);
-            System.out.println("✅ 'items_in_cart' table created.");
+            System.out.println("items_in_cart table created.");
         } catch (Exception e) {
-            System.out.println("❌ Failed to create items_in_cart table: " + e.getMessage());
+            System.out.println("failed to create items_in_cart table: " + e.getMessage());
         }
     }
 
+    // create order table
     private static void createOrdersTable() {
         try (Connection conn = DriverManager.getConnection("jdbc:sqlite:shoedb.db")) {
             Statement stmt = conn.createStatement();
@@ -102,12 +95,13 @@ public class ShoevaultApplication {
                     "grand_total REAL, " +
                     "FOREIGN KEY(user_id) REFERENCES users(id))";
             stmt.executeUpdate(sql);
-            System.out.println("✅ 'Order' table created.");
+            System.out.println("order table created.");
         } catch (Exception e) {
-            System.out.println("❌ Failed to create Order table: " + e.getMessage());
+            System.out.println("failed to create Order table: " + e.getMessage());
         }
     }
 
+    // create OrderItem table
     private static void createOrderItemsTable() {
         try (Connection conn = DriverManager.getConnection("jdbc:sqlite:shoedb.db")) {
             Statement stmt = conn.createStatement();
@@ -118,12 +112,13 @@ public class ShoevaultApplication {
                     "FOREIGN KEY(order_id) REFERENCES `Order`(order_id), " +
                     "FOREIGN KEY(product_id) REFERENCES products(id))";
             stmt.executeUpdate(sql);
-            System.out.println("✅ 'OrderItem' table created.");
+            System.out.println("OrderItem table created.");
         } catch (Exception e) {
-            System.out.println("❌ Failed to create OrderItem table: " + e.getMessage());
+            System.out.println("failed to create OrderItem table: " + e.getMessage());
         }
     }
 
+    //create payment table
     private static void createPaymentsTable() {
         try (Connection conn = DriverManager.getConnection("jdbc:sqlite:shoedb.db")) {
             Statement stmt = conn.createStatement();
@@ -137,13 +132,14 @@ public class ShoevaultApplication {
                     "paid_total REAL, " +
                     "FOREIGN KEY(order_id) REFERENCES `Order`(order_id))";
             stmt.executeUpdate(sql);
-            System.out.println("✅ 'Payment' table created.");
+            System.out.println("Payment table created.");
         } catch (Exception e) {
-            System.out.println("❌ Failed to create Payment table: " + e.getMessage());
+            System.out.println("failed to create Payment table: " + e.getMessage());
         }
     }
 
-    private static void insertDemoProductsIfEmpty() {
+    //insert seed products
+    private static void insertSeedProductsIfEmpty() {
         try (Connection conn = DriverManager.getConnection("jdbc:sqlite:shoedb.db")) {
             Statement stmt = conn.createStatement();
 
@@ -159,13 +155,13 @@ public class ShoevaultApplication {
                         "('Puma Classic', 'Old-school low-top with a sleek, minimalist look. Great for casual outfits.', 100.00, 0, '/shoe5.png')," +
                         "('New Balance', 'Chunky design meets comfort. Bold silhouette and strong arch support.', 135.00, 0, '/shoe6.png')");
 
-                System.out.println("✅ Demo products inserted.");
+                System.out.println("Seed products inserted.");
             } else {
-                System.out.println("✅ Products already exist. Skipping seeding.");
+                System.out.println("Products already exist. Skipping seeding.");
             }
 
         } catch (Exception e) {
-            System.out.println("❌ Failed to insert demo products: " + e.getMessage());
+            System.out.println("Failed to insert demo products: " + e.getMessage());
         }
     }
 }

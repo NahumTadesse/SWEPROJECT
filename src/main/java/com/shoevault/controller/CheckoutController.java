@@ -19,6 +19,7 @@ import java.util.List;
 @Controller
 public class CheckoutController {
 
+    //database and repositories
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
@@ -28,11 +29,13 @@ public class CheckoutController {
     @Autowired
     private ProductRepository productRepository;
 
+    //show checkout page
     @GetMapping("/checkout")
     public String showCheckoutPage() {
         return "checkout"; // Show checkout.html
     }
 
+    //handling checkout form submission
     @PostMapping("/confirmOrder")
     public String confirmOrder(
             @RequestParam("shippingAddress") String shippingAddress,
@@ -45,14 +48,16 @@ public class CheckoutController {
             HttpSession session,
             Model model
     ) {
+        // get logged-in user ID
         Integer userIdInt = (Integer) session.getAttribute("userId");
         Long userId = (userIdInt != null) ? userIdInt.longValue() : null;
 
+        // redirect to login if not logged in to make sure the did'nt just type checkout into url
         if (userId == null) {
             return "redirect:/login";
         }
 
-        // Save checkout info temporarily in session
+        // save checkout info temporarily into session
         session.setAttribute("shippingAddress", shippingAddress);
         session.setAttribute("phoneNumber", phoneNumber);
         session.setAttribute("cardNumber", cardNumber);
@@ -61,7 +66,7 @@ public class CheckoutController {
         session.setAttribute("cvv", cvv);
         session.setAttribute("shippingSpeed", shippingSpeed);
 
-        // Load cart items
+        //load user's cart items
         List<ItemsInCart> cartItems = cartRepository.findByUserId(userId);
         List<Product> products = new ArrayList<>();
         for (ItemsInCart item : cartItems) {
@@ -71,7 +76,7 @@ public class CheckoutController {
             }
         }
 
-        // Calculate totals
+        // calculate subtotal, tax, shipping, and grand total
         double subtotal = products.stream().mapToDouble(Product::getPrice).sum();
         double tax = subtotal * 0.06;
         double shippingCost = 0;
@@ -82,38 +87,41 @@ public class CheckoutController {
         }
         double grandTotal = subtotal + tax + shippingCost;
 
-        // Round to 2 decimals
+        //round all prices to 2 decimal places as per the requirements
         subtotal = round(subtotal);
         tax = round(tax);
         shippingCost = round(shippingCost);
         grandTotal = round(grandTotal);
 
-        // Save prices in session
+        //save price info into session
         session.setAttribute("subtotal", subtotal);
         session.setAttribute("tax", tax);
         session.setAttribute("shippingCost", shippingCost);
         session.setAttribute("grandTotal", grandTotal);
 
-        // Pass data to confirmOrder.html
+        //pass cart items and totals to confirmOrder.html
         model.addAttribute("cartItems", products);
         model.addAttribute("subtotal", subtotal);
         model.addAttribute("tax", tax);
         model.addAttribute("shippingCost", shippingCost);
         model.addAttribute("grandTotal", grandTotal);
 
-        return "confirmOrder";
+        return "confirmOrder"; // Show confirmOrder.html
     }
 
+    // handle final order completion
     @PostMapping("/completeOrder")
     public String completeOrder(HttpSession session, Model model) {
+        // Get logged-in user ID
         Integer userIdInt = (Integer) session.getAttribute("userId");
         Long userId = (userIdInt != null) ? userIdInt.longValue() : null;
 
+        // redirect to login if not logged in to make sure the did'nt just type checkout into url
         if (userId == null) {
             return "redirect:/login";
         }
 
-        // Get checkout info from session
+        //get checkout info from session
         double subtotal = (double) session.getAttribute("subtotal");
         double tax = (double) session.getAttribute("tax");
         double shippingCost = (double) session.getAttribute("shippingCost");
@@ -126,33 +134,35 @@ public class CheckoutController {
         int cvv = Integer.parseInt((String) session.getAttribute("cvv"));
         String shippingSpeed = (String) session.getAttribute("shippingSpeed");
 
-        // Insert into Order table
+        //insert order into Order table
         jdbcTemplate.update(
                 "INSERT INTO `Order` (user_id, subtotal, tax_amount, shipping_cost, shipping_method, shipping_address, phone_number, grand_total) " +
                         "VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
                 userId, subtotal, tax, shippingCost, shippingSpeed, shippingAddress, phoneNumber, grandTotal
         );
 
+        //get generated order ID
         Integer orderId = jdbcTemplate.queryForObject("SELECT last_insert_rowid()", Integer.class);
 
-        // Insert each item into OrderItem table
+        // inserting ordered items into OrderItem table
         List<ItemsInCart> cartItems = cartRepository.findByUserId(userId);
         for (ItemsInCart item : cartItems) {
             jdbcTemplate.update(
                     "INSERT INTO OrderItem (order_id, product_id) VALUES (?, ?)",
                     orderId, item.getProductId()
             );
+            // mark product as sold
             productRepository.markAsSold(item.getProductId());
         }
 
-        // Insert payment info
+        // insert payment information into Payment table
         jdbcTemplate.update(
                 "INSERT INTO Payment (order_id, card_number, card_exp_month, card_exp_year, cvv, paid_total) " +
                         "VALUES (?, ?, ?, ?, ?, ?)",
                 orderId, cardNumber, cardExpMonth, cardExpYear, cvv, grandTotal
         );
 
-        // Clear checkout info from session
+        // clear checkout-related session attributes
         session.removeAttribute("subtotal");
         session.removeAttribute("tax");
         session.removeAttribute("shippingCost");
@@ -165,10 +175,10 @@ public class CheckoutController {
         session.removeAttribute("cvv");
         session.removeAttribute("shippingSpeed");
 
-        // Clear user's cart
+        // clear user's cart
         cartRepository.clearCart(userId);
 
-        // Pass needed attributes to the receipt page
+        // Pass receipt details to receipt.html
         model.addAttribute("shippingAddress", shippingAddress);
         model.addAttribute("cardLast4", cardNumber.substring(cardNumber.length() - 4));
         model.addAttribute("subtotal", subtotal);
@@ -176,9 +186,10 @@ public class CheckoutController {
         model.addAttribute("shippingCost", shippingCost);
         model.addAttribute("grandTotal", grandTotal);
 
-        return "receipt";
+        return "receipt"; // Show receipt.html
     }
 
+    // round a double to 2 decimal places like the requirements ask
     private double round(double value) {
         return BigDecimal.valueOf(value).setScale(2, RoundingMode.HALF_UP).doubleValue();
     }

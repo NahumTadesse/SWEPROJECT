@@ -20,14 +20,17 @@ import java.nio.file.Paths;
 @Controller
 public class AddInventoryController {
 
+    // ProductRepository to save products
     @Autowired
     private ProductRepository productRepository;
 
+    // show the add inventory page
     @GetMapping("/addInventory")
     public String showAddInventoryPage() {
         return "addInventory";
     }
 
+    // handle the submission from the admin to add a new product
     @PostMapping("/addInventory")
     public String addInventory(
             @RequestParam("name") String name,
@@ -37,45 +40,52 @@ public class AddInventoryController {
             Model model) {
 
         try {
-            // ✅ Save images inside src/main/resources/static/uploads/
+            // set upload directory path under(static/uploads folder)
             String uploadDirPath = new File("src/main/resources/static/uploads").getAbsolutePath();
             File uploadDir = new File(uploadDirPath);
 
+            // creating an uploads folder in case it get deleted for whatever reason
             if (!uploadDir.exists()) {
-                uploadDir.mkdirs(); // Create uploads folder if it doesn't exist
+                uploadDir.mkdirs();
             }
 
             String imageUrl = null;
+
+            // if an image was uploaded the following will run
             if (!image.isEmpty()) {
                 String originalFilename = image.getOriginalFilename();
                 String timestamp = String.valueOf(System.currentTimeMillis());
                 String imageName = timestamp + "_" + originalFilename;
 
-                // ✅ Save the uploaded file
+                //saving the uploaded image file
                 Path destinationPath = Paths.get(uploadDirPath, imageName);
                 Files.copy(image.getInputStream(), destinationPath);
 
-                // ✅ Save browser-accessible path in database
+                //set image URL path for browser access
                 imageUrl = "/uploads/" + imageName;
             }
 
-            // ✅ Save the product into database
+            // create a new product and save it
             Product product = new Product();
             product.setName(name);
             product.setDescription(description);
             product.setPrice(price);
             product.setImageUrl(imageUrl);
-            product.setSold(false); // New product is unsold
+            product.setSold(false); // New product is marked as unsold
 
+            // save the product to the database
             productRepository.save(product);
 
+            // the following will show the product has been succesfully added
             model.addAttribute("successMessage", "✅ Product added successfully!");
 
         } catch (IOException e) {
+            // the following will show the product has not been succesfully added
             model.addAttribute("errorMessage", "❌ Failed to upload image or save product: " + e.getMessage());
             e.printStackTrace();
         }
 
+        //returns to addInventory page
         return "addInventory";
     }
 }
