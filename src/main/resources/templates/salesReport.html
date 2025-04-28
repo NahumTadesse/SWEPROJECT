@@ -3,35 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <title>Sales Report - ShoeVault</title>
+
+    <!-- importing font -->
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
     <style>
+        /* background layout and fonts */
         body {
             background-color: #eee;
             font-family: 'Bebas Neue', sans-serif;
             margin: 0;
             padding: 40px;
         }
+
+        /* table styling */
         table {
             width: 100%;
             background-color: white;
             border-collapse: collapse;
             margin-bottom: 20px;
         }
+
+        /*table header and cells */
         th, td {
             padding: 15px;
             border: 1px solid #ccc;
             text-align: left;
         }
+
+        /* table header */
         th {
             background-color: #ddd;
         }
+
+        /* links */
         a {
             color: black;
             text-decoration: none;
         }
+
+        /* hover effect for links */
         a:hover {
             text-decoration: underline;
         }
+
+        /* export CSV button */
         .export-btn {
             background-color: black;
             color: white;
@@ -42,17 +58,23 @@
             display: inline-block;
             margin-bottom: 20px;
         }
+
+        /*hover effect for export button */
         .export-btn:hover {
             background-color: #333;
         }
     </style>
 </head>
+
 <body>
+
 
 <h1>Sales Report</h1>
 
+<!-- export to CSV button -->
 <a href="/exportSalesCsv" class="export-btn">Download CSV</a>
 
+<!-- sales table -->
 <table>
     <thead>
     <tr>
@@ -62,16 +84,28 @@
         <th>Order ID</th>
     </tr>
     </thead>
+
     <tbody>
+    <!-- loop through each sale record -->
     <tr th:each="sale : ${salesData}">
+
+        <!-- product name which will be linked to receipt -->
         <td><a th:href="@{'/receipt/' + ${sale.order_id}}" th:text="${sale.name}">Product</a></td>
+
+        <!-- product price -->
         <td th:text="'$' + ${#numbers.formatDecimal(sale.price, 1, 2)}">$0.00</td>
+
+        <!-- username of who purchased the shoe -->
         <td th:text="${sale.username}">Username</td>
+
+        <!-- order ID -->
         <td th:text="${sale.order_id}">Order ID</td>
+
     </tr>
     </tbody>
 </table>
 
+<!-- back to home link -->
 <a href="/home">Back to Home</a>
 
 </body>

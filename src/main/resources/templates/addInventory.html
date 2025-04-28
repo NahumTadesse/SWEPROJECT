@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Add Inventory - ShoeVault</title>
+
+    <!-- Import font -->
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
     <style>
+        /* background and font */
         body {
             background-color: #eee;
             font-family: 'Bebas Neue', sans-serif;
             padding: 40px;
         }
+
+        /*container sizes for the form */
         .form-container {
             background-color: white;
             padding: 30px;
@@ -18,12 +24,16 @@
             max-width: 500px;
             margin: 0 auto;
         }
+
+        /* inputs and textarea fields */
         input, textarea {
             width: 100%;
             margin-bottom: 15px;
             padding: 10px;
             font-family: 'Bebas Neue', sans-serif;
         }
+
+        /* button sizes */
         button {
             width: 100%;
             background-color: black;
@@ -34,9 +44,13 @@
             cursor: pointer;
             border-radius: 8px;
         }
+
+        /* button hover effect */
         button:hover {
             background-color: #333;
         }
+
+        /*message, here we will tell if user if the inventory has been succesfully added or not */
         .message {
             text-align: center;
             margin-bottom: 15px;
@@ -46,22 +60,41 @@
 </head>
 <body>
 
+<!-- form that the admin will fill out to add inventory-->
 <div class="form-container">
+
+
     <h1>Add New Product</h1>
 
+    <!-- if the add was succesful this message will appear in green-->
     <div th:if="${successMessage}" class="message" style="color: green;" th:text="${successMessage}"></div>
+
+    <!-- if the add was not succesful this message will appear in red-->
     <div th:if="${errorMessage}" class="message" style="color: red;" th:text="${errorMessage}"></div>
 
+    <!-- here is everything an admin will have to fillout to add a new product -->
     <form th:action="@{/addInventory}" method="post" enctype="multipart/form-data">
+
+        <!-- product name input -->
         <input type="text" name="name" placeholder="Product Name" required />
+
+        <!-- product description input -->
         <textarea name="description" placeholder="Description" rows="4" required></textarea>
+
+        <!-- product price input -->
         <input type="number" name="price" placeholder="Price" step="0.01" required />
+
+        <!-- product image file input -->
         <input type="file" name="image" accept="image/*" required />
+
+        <!-- Add product button -->
         <button type="submit">Add Product</button>
     </form>
 
+    <!-- button to go back to homepage -->
     <br>
     <a href="/home">Back to Home</a>
+
 </div>
 
 </body>

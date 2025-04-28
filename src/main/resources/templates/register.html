@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>ShoeVault Register</title>
+
+    <!-- here i am importing a font, I picked one that look good for a streetwear/ shoe website -->
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
     <style>
+        /* this following code creates the page background and sets the font */
         body {
             background-color: #eee;
             font-family: 'Bebas Neue', sans-serif;
@@ -15,22 +19,30 @@
             margin: 0;
             flex-direction: column;
         }
+
+        /* here we set the size of the logo */
         .logo {
             width: 170px;
             margin-bottom: 10px;
         }
+
+        /* setting the size of the welcome text  */
         .welcome-text {
             text-align: center;
             margin-bottom: 20px;
         }
+        /* setting the size  for "Welcome to SHowVault"  */
         .welcome-text h1 {
             margin: 0;
             font-size: 32px;
         }
+        /* setting the size  for "Your one stop shop for all your shoe needs"  */
         .welcome-text p {
             margin: 0;
             font-size: 18px;
         }
+
+        /* setting the style for the registration box*/
         .register-box {
             background-color: white;
             padding: 30px;
@@ -39,42 +51,59 @@
             width: 300px;
             text-align: center;
         }
+
+        /* input, select, and button*/
         .register-box input, .register-box select, .register-box button {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
         }
+
+        /* setting the color for the register button  */
         .register-box button {
             background-color: black;
             color: white;
             border: none;
             cursor: pointer;
         }
+
+        /* button hover effect */
         .register-box button:hover {
             background-color: #333;
         }
     </style>
 </head>
 <body>
+
+<!-- logo image this is for the shoevault logo  -->
 <img src="/shoevault-logo.png" alt="ShoeVault Logo" class="logo" />
+
+<!-- welcome text -->
 <div class="welcome-text">
     <h1>Welcome to ShoeVault</h1>
     <p>Your one stop shop for all your shoe needs</p>
 </div>
+
+<!-- register form -->
 <div class="register-box">
     <form th:action="@{/register}" method="post">
+        <!-- username input -->
         <input type="text" name="username" placeholder="Username" required />
-        <input type="password" name="password" placeholder="Password" required />
 
-        <!-- New dropdown for role selection -->
+        <!-- password input (min 6 characters) -->
+        <input type="password" name="password" placeholder="Password" required minlength="6" />
+
+        <!-- role dropdown -->
         <select name="role" required>
             <option value="" disabled selected>Select Role</option>
             <option value="USER">User</option>
             <option value="ADMIN">Admin</option>
         </select>
 
+        <!-- Register button -->
         <button type="submit">Register</button>
     </form>
 </div>
+
 </body>
 </html>

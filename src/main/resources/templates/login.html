@@ -3,8 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <title>ShoeVault Login</title>
+
+  <!-- importing font -->
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
   <style>
+    /* background layout and font */
     body {
       background-color: #eee;
       font-family: 'Bebas Neue', sans-serif;
@@ -15,22 +19,30 @@
       margin: 0;
       flex-direction: column;
     }
+
+    /* logo*/
     .logo {
       width: 170px;
       margin-bottom: 10px;
     }
+
+    /* welcome text styling */
     .welcome-text {
       text-align: center;
       margin-bottom: 20px;
     }
+
     .welcome-text h1 {
       margin: 0;
       font-size: 32px;
     }
+
     .welcome-text p {
       margin: 0;
       font-size: 18px;
     }
+
+    /* login box*/
     .login-box {
       background-color: white;
       padding: 30px;
@@ -39,37 +51,55 @@
       width: 300px;
       text-align: center;
     }
+
+    /*inputs and buttons within the login box */
     .login-box input, .login-box button {
       width: 100%;
       padding: 10px;
       margin: 10px 0;
     }
+
+    /* button color and */
     .login-box button {
       background-color: black;
       color: white;
       border: none;
       cursor: pointer;
     }
+    /*hover effect */
     .login-box button:hover {
       background-color: #333;
     }
   </style>
 </head>
+
 <body>
+
+<!-- logo image -->
 <img src="/shoevault-logo.png" alt="ShoeVault Logo" class="logo" />
+
+<!-- welcome text -->
 <div class="welcome-text">
   <h1>Welcome to ShoeVault</h1>
   <p>Your one stop shop for all your shoe needs</p>
 </div>
+
+<!-- login form container -->
 <div class="login-box">
-  <form th:action="@{/login}" method="post">
+
+
+ <form th:action="@{/login}" method="post">
     <input type="text" name="username" placeholder="Username" required />
     <input type="password" name="password" placeholder="Password" required />
     <button type="submit">Login</button>
   </form>
+
+  <!-- register button to go to register page -->
   <form th:action="@{/register}" method="get">
     <button type="submit">Register</button>
   </form>
+
 </div>
+
 </body>
 </html>

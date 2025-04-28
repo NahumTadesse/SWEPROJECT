@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Receipt - ShoeVault</title>
+
+    <!-- importing font -->
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
     <style>
+        /* background layout and fonts  */
         body {
             background-color: #eee;
             font-family: 'Bebas Neue', sans-serif;
@@ -16,6 +20,8 @@
             margin: 0;
             padding: 40px;
         }
+
+        /* receipt container box */
         .receipt-container {
             background-color: white;
             padding: 30px;
@@ -24,23 +30,33 @@
             max-width: 700px;
             width: 100%;
         }
+
+        /* page title styling */
         h1 {
             text-align: center;
             margin-bottom: 30px;
         }
+
+        /* info and totals*/
         .info, .totals {
             font-size: 18px;
             margin-top: 10px;
         }
+
+        /* row layout for info(ex.price) and values(ex.$250) */
         .row {
             display: flex;
             justify-content: space-between;
             margin: 10px 0;
             padding: 0 10px;
         }
+
+        /*label text styling */
         .label {
             font-weight: bold;
         }
+
+        /* button styling */
         button {
             background-color: black;
             color: white;
@@ -53,49 +69,72 @@
             cursor: pointer;
             width: 100%;
         }
+
+        /* button hover effect */
         button:hover {
             background-color: #333;
         }
     </style>
 </head>
+
 <body>
 
+<!-- receipt container -->
 <div class="receipt-container">
+
     <h1>Thank You for Your Purchase!</h1>
 
+    <!-- shipping and payment info -->
     <div class="info">
+
+        <!-- shipping address -->
         <div class="row">
             <div class="label">Shipping Address:</div>
             <div th:text="${shippingAddress}">123 Example St.</div>
         </div>
+
+        <!-- card last 4 digits -->
         <div class="row">
             <div class="label">Card Ending In:</div>
             <div th:text="${cardLast4}">1234</div>
         </div>
+
     </div>
 
+    <!-- order totals -->
     <div class="totals">
+
+        <!-- subtotal -->
         <div class="row">
             <div class="label">Subtotal:</div>
             <div th:text="'$' + ${#numbers.formatDecimal(subtotal, 1, 2)}">$0.00</div>
         </div>
+
+        <!-- Tax -->
         <div class="row">
             <div class="label">Tax (6%):</div>
             <div th:text="'$' + ${#numbers.formatDecimal(tax, 1, 2)}">$0.00</div>
         </div>
+
+        <!-- shipping cost -->
         <div class="row">
             <div class="label">Shipping:</div>
             <div th:text="'$' + ${#numbers.formatDecimal(shippingCost, 1, 2)}">$0.00</div>
         </div>
+
+        <!-- grand total -->
         <div class="row">
             <div class="label"><strong>Grand Total:</strong></div>
             <div><strong th:text="'$' + ${#numbers.formatDecimal(grandTotal, 1, 2)}">$0.00</strong></div>
         </div>
+
     </div>
 
+    <!-- ok button to return home -->
     <form action="/home" method="get">
         <button type="submit">OK</button>
     </form>
+
 </div>
 
 </body>

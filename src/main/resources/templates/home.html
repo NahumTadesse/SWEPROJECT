@@ -3,14 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <title>Welcome to ShoeVault</title>
+
+  <!-- importing font -->
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
   <style>
+    /* page background and font */
     body {
       background-color: #eee;
       font-family: 'Bebas Neue', sans-serif;
       margin: 0;
       padding: 0;
     }
+
+    /*menu bar */
     .menu {
       background-color: #ccc;
       padding: 15px;
@@ -18,32 +24,45 @@
       justify-content: space-between;
       align-items: center;
     }
+
+    /*left side of menu(Home, Cart, Sales Report (admin only), Add Inventory (admin only)) */
     .menu-left {
       display: flex;
       gap: 20px;
       align-items: center;
     }
+
+    /*right side of menu(logout) */
     .menu-right {
       display: flex;
       gap: 20px;
       align-items: center;
     }
+
+    /* style for all menu options */
     .menu a {
       color: black;
       text-decoration: none;
       font-size: 20px;
     }
+
+    /* Disabled menu link( example cart is disabled when cart is empty) */
     .menu a.disabled {
       color: grey;
       pointer-events: none;
     }
+
+    /* hover effect on active links that are not disabled */
     .menu a:hover:not(.disabled) {
       text-decoration: underline;
     }
+
     h1 {
       text-align: center;
       margin: 40px 0 20px 0;
     }
+
+    /* grid layout for products */
     .product-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -52,6 +71,8 @@
       margin: 0 auto;
       padding: 20px;
     }
+
+    /* single product picture */
     .product-card {
       background-color: white;
       border-radius: 12px;
@@ -61,9 +82,13 @@
       padding: 10px;
       transition: transform 0.2s ease;
     }
+
+    /* hover zoom on product */
     .product-card:hover {
       transform: scale(1.03);
     }
+
+    /* product image */
     .product-card img {
       width: 100%;
       height: 250px;
@@ -72,12 +97,16 @@
       border-bottom: 1px solid #ddd;
       margin-bottom: 10px;
     }
+
+    /* product name*/
     .product-name {
       font-size: 18px;
       margin-top: 5px;
       margin-bottom: 5px;
       color: black;
     }
+
+    /* product price*/
     .product-price {
       font-size: 16px;
       color: #555;
@@ -88,35 +117,51 @@
 
 <body>
 
-<!-- ✅ Menu Bar -->
+<!-- menu Bar -->
 <div class="menu">
+
+  <!-- left side of menu(Home, Cart, Sales Report (admin only), Add Inventory (admin only)) -->
   <div class="menu-left">
+    <!-- Home link -->
     <a href="/home">Home</a>
 
-    <!-- ✅ Cart link: always visible, disabled if empty -->
+    <!-- cart link disabled if empty -->
     <a th:href="${cartItemCount > 0} ? '/cart' : '#'" th:classappend="${cartItemCount == 0} ? 'disabled' : ''">Cart</a>
 
-    <!-- ✅ Admin-only options -->
+    <!-- admin only menu options -->
     <a href="/salesReport" th:if="${user != null and user.admin}">Sales Report</a>
     <a href="/addInventory" th:if="${user != null and user.admin}">Add Inventory</a>
   </div>
 
+  <!-- right side (logout link) -->
   <div class="menu-right">
     <a href="/logout">Logout</a>
   </div>
+
 </div>
 
-<!-- ✅ Main Section -->
+
 <h1>Explore the Vault</h1>
 
+<!-- product grid layout -->
 <div class="product-grid">
+
+
   <div class="product-card" th:each="product : ${products}">
+
+    <!-- clickable product image -->
     <a th:href="@{'/product/' + ${product.id}}">
       <img th:src="@{${product.imageUrl}}" th:alt="${product.name}" />
     </a>
+
+    <!-- product name -->
     <div class="product-name" th:text="${product.name}">Shoe Name</div>
+
+    <!-- product price -->
     <div class="product-price" th:text="'$' + ${#numbers.formatDecimal(product.price, 1, 2)}">$0.00</div>
+
   </div>
+
 </div>
 
 </body>

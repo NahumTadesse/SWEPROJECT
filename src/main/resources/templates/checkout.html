@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Checkout - ShoeVault</title>
+
+    <!-- import font -->
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
     <style>
+        /* background layout and font */
         body {
             background-color: #eee;
             font-family: 'Bebas Neue', sans-serif;
@@ -16,6 +20,8 @@
             margin: 0;
             padding: 40px;
         }
+
+        /* container for the checkout */
         .checkout-container {
             background-color: white;
             padding: 30px;
@@ -24,10 +30,13 @@
             max-width: 600px;
             width: 100%;
         }
+
         h1 {
             text-align: center;
             margin-bottom: 20px;
         }
+
+        /* styling for the form( user input/buttons) */
         form input, form select, form button {
             width: 100%;
             padding: 10px;
@@ -35,6 +44,8 @@
             font-family: 'Bebas Neue', sans-serif;
             font-size: 16px;
         }
+
+        /* button style */
         form button {
             background-color: black;
             color: white;
@@ -42,6 +53,8 @@
             border-radius: 8px;
             cursor: pointer;
         }
+
+        /*button hover effect*/
         form button:hover {
             background-color: #333;
         }
@@ -49,35 +62,39 @@
 </head>
 <body>
 
+<!-- Checkout form container -->
 <div class="checkout-container">
+
+
     <h1>Checkout</h1>
 
+    <!-- checkout page that needs to be filled out by user -->
     <form th:action="@{/confirmOrder}" method="post">
 
-        <!-- Shipping Address -->
+        <!-- shipping address input -->
         <input type="text" name="shippingAddress" placeholder="Shipping Address" required />
 
-        <!-- Phone Number -->
+        <!-- phone number input (must be 10 digits) -->
         <input type="text" name="phoneNumber" placeholder="Phone Number (10 digits)"
                pattern="\d{10}" maxlength="10" title="Phone number must be 10 digits" required />
 
-        <!-- Credit Card Number -->
+        <!-- credit card number input (must be 16 digits) -->
         <input type="text" name="cardNumber" placeholder="Credit Card Number (16 digits)"
                pattern="\d{16}" maxlength="16" title="Card number must be 16 digits" required />
 
-        <!-- Expiration Month -->
-        <input type="text" name="cardExpMonth" placeholder="Expiration Month (MM)"
-               pattern="\d{2}" maxlength="2" title="Expiration month must be 2 digits" required />
+        <!-- expiration month input (2 digits) with error check for vaild input-->
+        <input type="number" name="cardExpMonth" placeholder="Expiration Month (MM)"
+               min="1" max="12" required />
 
-        <!-- Expiration Year -->
-        <input type="text" name="cardExpYear" placeholder="Expiration Year (YYYY)"
-               pattern="\d{4}" maxlength="4" title="Expiration year must be 4 digits" required />
+        <!-- expiration year input (4 digits) with error check for vaild input-->
+        <input type="text" id="cardExpYear" name="cardExpYear" placeholder="YYYY"
+               maxlength="4" required>
 
-        <!-- CVV -->
+        <!-- CVV input (3 digits) -->
         <input type="text" name="cvv" placeholder="CVV (3 digits)"
                pattern="\d{3}" maxlength="3" title="CVV must be 3 digits" required />
 
-        <!-- Shipping Method -->
+        <!-- shipping method dropdown -->
         <select name="shippingSpeed" required>
             <option value="" disabled selected>Select Shipping Method</option>
             <option value="Overnight">Overnight - $29.00</option>
@@ -85,13 +102,15 @@
             <option value="Ground">Ground - Free</option>
         </select>
 
-        <!-- Confirm Order Button -->
+        <!-- confirm order button -->
         <button type="submit">Confirm Order</button>
     </form>
 
+    <!-- back to cart button -->
     <div style="text-align: center; margin-top: 20px;">
         <button onclick="window.location.href='/cart'">Back to Cart</button>
     </div>
+
 </div>
 
 </body>

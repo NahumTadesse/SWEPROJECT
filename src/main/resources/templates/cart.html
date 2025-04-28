@@ -3,22 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title>Your Cart</title>
+
+    <!-- importing font -->
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
     <style>
+        /* background and font */
         body {
             background-color: #eee;
             font-family: 'Bebas Neue', sans-serif;
             padding: 40px;
             margin: 0;
         }
+
+        /*cart container */
         .cart-container {
             max-width: 800px;
             margin: 0 auto;
         }
+
+        /* that says YOUR CART */
         h1 {
             text-align: center;
             margin-bottom: 30px;
         }
+
+        /* how single items will be stored in cart*/
         .cart-item {
             background-color: white;
             border-radius: 12px;
@@ -29,20 +39,30 @@
             align-items: center;
             justify-content: space-between;
         }
+
+        /* shoe image */
         .cart-item img {
             height: 80px;
         }
+
+        /* product info (name and price) */
         .info {
             flex-grow: 1;
             margin-left: 20px;
         }
+
+        /* price of the shoe*/
         .cart-item .price {
             font-size: 18px;
             margin-top: 5px;
         }
+
+        /* remove button container */
         .remove-form {
             margin-left: 20px;
         }
+
+        /* remove button color,font,etc. */
         .remove-form button {
             background-color: black;
             color: white;
@@ -53,12 +73,16 @@
             border-radius: 6px;
             font-size: 16px;
         }
+
+        /* total price*/
         .total {
             font-size: 24px;
             text-align: right;
             margin-top: 30px;
             font-weight: bold;
         }
+
+        /* pay now, back to vault buttons) */
         button {
             background-color: black;
             color: white;
@@ -72,46 +96,63 @@
     </style>
 </head>
 <body>
+
+<!-- cart container box -->
 <div class="cart-container">
+
+
     <h1>Your Cart</h1>
 
-    <!-- Redirect to home if cart is empty -->
+    <!-- here we ensure that if the cart is empty the user redirected back to the homepage-->
     <div th:if="${#lists.isEmpty(cartItems)}">
         <script>
             window.location.href = '/home';
         </script>
     </div>
 
-    <!-- Only show if cart is not empty -->
+    <!-- if the cart is not empty we will show cart items -->
     <div th:if="${!#lists.isEmpty(cartItems)}">
+
+
         <div th:each="product : ${cartItems}" class="cart-item">
+
+            <!-- product image -->
             <img th:src="@{${product.imageUrl}}" alt="Shoe Image">
+
+            <!-- product name and price -->
             <div class="info">
                 <h2 th:text="${product.name}">Shoe Name</h2>
                 <p class="price" th:text="'$' + ${#numbers.formatDecimal(product.price, 1, 2)}">Price</p>
             </div>
+
+            <!-- removing a shoe from the cart-->
             <form class="remove-form" th:action="@{/cart/remove}" method="post">
                 <input type="hidden" name="productId" th:value="${product.id}" />
                 <button type="submit">Remove</button>
             </form>
+
         </div>
 
+        <!-- total price -->
         <div class="total">
             Total: <span th:text="'$' + ${#numbers.formatDecimal(totalPrice, 1, 2)}">$0.00</span>
         </div>
 
-        <!-- Pay Now button -->
+        <!-- pay now button -->
         <div style="text-align: center; margin-top: 20px;">
             <form th:action="@{/checkout}" method="get">
                 <button type="submit">Pay Now</button>
             </form>
         </div>
+
     </div>
 
-    <!-- Always Back to Vault button -->
+    <!-- always show back to vault button -->
     <div style="text-align: center; margin-top: 10px;">
         <button onclick="window.location.href='/home'">Back to Vault</button>
     </div>
+
 </div>
+
 </body>
 </html>

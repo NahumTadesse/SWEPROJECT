@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Confirm Your Order - ShoeVault</title>
+
+    <!-- importing font -->
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
     <style>
+        /* background  layout and font */
         body {
             background-color: #eee;
             font-family: 'Bebas Neue', sans-serif;
@@ -16,6 +20,8 @@
             margin: 0;
             padding: 40px;
         }
+
+        /* container for confirming order */
         .confirm-container {
             background-color: white;
             padding: 30px;
@@ -24,10 +30,13 @@
             max-width: 700px;
             width: 100%;
         }
+        /* header size and margin*/
         h1 {
             text-align: center;
             margin-bottom: 20px;
         }
+
+        /* order summary*/
         .order-summary {
             margin-bottom: 30px;
         }
@@ -35,15 +44,21 @@
             list-style-type: none;
             padding: 0;
         }
+
+        /* layout for each product*/
         .order-summary li {
             margin: 10px 0;
             display: flex;
             justify-content: space-between;
         }
+
+        /* total section styling */
         .totals {
             font-size: 20px;
             margin-top: 20px;
         }
+
+        /* button styling */
         form button, .nav-buttons button {
             width: 100%;
             background-color: black;
@@ -56,6 +71,8 @@
             font-size: 18px;
             cursor: pointer;
         }
+
+        /* button hover effect */
         form button:hover, .nav-buttons button:hover {
             background-color: #333;
         }
@@ -63,17 +80,22 @@
 </head>
 <body>
 
+<!-- confirm container box -->
 <div class="confirm-container">
+
+
     <h1>Confirm Your Order</h1>
 
     <div class="order-summary">
         <ul>
+            <!-- list all cart items -->
             <li th:each="product : ${cartItems}">
                 <span th:text="${product.name}">Product Name</span>
                 <span th:text="'$' + ${#numbers.formatDecimal(product.price, 1, 2)}">Price</span>
             </li>
         </ul>
 
+        <!-- show subtotal, tax, shipping, and grand total -->
         <div class="totals">
             <p>Subtotal: <span th:text="'$' + ${#numbers.formatDecimal(subtotal, 1, 2)}">$0.00</span></p>
             <p>Tax (6%): <span th:text="'$' + ${#numbers.formatDecimal(tax, 1, 2)}">$0.00</span></p>
@@ -82,14 +104,17 @@
         </div>
     </div>
 
+    <!-- complete order button -->
     <form th:action="@{/completeOrder}" method="post">
         <button type="submit">Complete Order</button>
     </form>
 
+    <!-- button to go back to checkout for back to the homepage "vault" -->
     <div class="nav-buttons" style="margin-top: 20px;">
         <button onclick="window.location.href='/checkout'">Back to Checkout</button>
         <button onclick="window.location.href='/home'">Return to Vault</button>
     </div>
+
 </div>
 
 </body>

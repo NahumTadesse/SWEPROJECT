@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title th:text="${product.name}">Product Detail</title>
+
+    <!-- importing font -->
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
     <style>
+        /* background layout and fonts */
         body {
             background-color: #eee;
             font-family: 'Bebas Neue', sans-serif;
@@ -16,6 +20,7 @@
             flex-direction: column;
         }
 
+        /* product container box */
         .product-container {
             background-color: white;
             border-radius: 12px;
@@ -26,6 +31,7 @@
             text-align: center;
         }
 
+        /* product image */
         .product-image {
             width: 100%;
             max-height: 400px;
@@ -33,17 +39,20 @@
             margin-bottom: 20px;
         }
 
+        /* price of a shoe*/
         .price {
             font-size: 24px;
             margin-top: 10px;
         }
 
+        /* product description text */
         .description {
             margin: 20px 0;
             font-size: 16px;
             color: #333;
         }
 
+        /* row for buttons to have the aligned with each other */
         .button-row {
             display: flex;
             justify-content: space-between;
@@ -51,6 +60,7 @@
             margin-top: 20px;
         }
 
+        /* button styling */
         button {
             background-color: black;
             color: white;
@@ -67,23 +77,39 @@
         }
     </style>
 </head>
+
 <body>
+
+<!-- Product container -->
 <div class="product-container">
+
+    <!-- product name -->
     <h2 th:text="${product.name}">Shoe Name</h2>
+
+    <!-- product price -->
     <p class="price" th:text="'$' + ${#numbers.formatDecimal(product.price, 1, 2)}">Price</p>
+
+    <!-- product image -->
     <img class="product-image" th:src="@{${product.imageUrl}}" alt="Product Image"/>
 
+    <!-- buttons(back and Add to Cart) -->
     <div class="button-row">
+
+        <!-- back to home button -->
         <button onclick="window.location.href='/home'">Back to Vault</button>
 
-        <!-- Add to Cart Form -->
+        <!-- add to cart -->
         <form th:action="@{/cart/add}" method="post">
             <input type="hidden" name="productId" th:value="${product.id}"/>
             <button type="submit">Add to Cart</button>
         </form>
+
     </div>
 
+    <!-- Product description -->
     <p class="description" th:text="${product.description}">Description</p>
+
 </div>
+
 </body>
 </html>
