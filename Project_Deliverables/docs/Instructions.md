@@ -35,6 +35,5 @@ If for whatecer reason Maven is giving you trouble you can try
 
 ```mvn clean install```
 ## 4. Link to the site 
-The link to the site is [here](localhost:8081/login) make sure you build and compile code first.
-
+The link to the site is [here](http://localhost:8081/login) make sure you build and compile code first.
 
