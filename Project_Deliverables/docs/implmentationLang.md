@@ -1,7 +1,7 @@
 # Implementation Language
 
-## Java
-Our project ShoeVault will be mainly built using Java.
+## Java 22
+Our project ShoeVault will be mainly built using Java 22.
 
 - **Why Java?**  
   Java is a really strong language for backend development, especially when paired with Spring Boot. 
