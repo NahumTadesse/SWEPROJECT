@@ -19,17 +19,10 @@ Replace `username` and `repo` with the actual GitHub username and repository nam
 ```bash
 git clone https://github.com/NahumTadesse/SWEPROJECT
 ```
-## 3. Navigate to the repository
 
-Then cd into the project directory
-
-```bash
-cd {where the project was installed}
-```
-
-## 4. Setup the Repository
+## 3. Setup the Repository
 ```bash
 git stash --include-untracked
 git checkout master
 ```
-## 5. Done! Relax, the hard part has been completed.
+## 4. Done! Relax, the hard part has been completed.
