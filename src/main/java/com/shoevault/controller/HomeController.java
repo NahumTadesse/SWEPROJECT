@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 import java.util.Set;
@@ -26,7 +27,7 @@ public class HomeController {
 
     //show the home page
     @GetMapping("/home")
-    public String showHomePage(HttpSession session, Model model) {
+    public String showHomePage(HttpSession session, Model model, @RequestParam(value = "search", required = false) String search) {
         // get the logged-in user from session
         User loggedInUser = (User) session.getAttribute("loggedInUser");
 
@@ -53,6 +54,13 @@ public class HomeController {
                 .filter(p -> !p.isSold() && !productIdsInCart.contains(p.getId()))
                 .sorted((p1, p2) -> Double.compare(p2.getPrice(), p1.getPrice())) // Sort high to low by price
                 .collect(Collectors.toList());
+
+        //if search is not empty filter products by name
+        if (search != null && !search.isEmpty()) {
+            products = products.stream()
+                    .filter(product -> product.getName().toLowerCase().contains(search.toLowerCase()))
+                    .collect(Collectors.toList());
+        }
 
         //pass products list to the page
         model.addAttribute("products", products);

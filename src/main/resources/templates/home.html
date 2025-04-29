@@ -118,6 +118,19 @@
       color: #555;
       margin-bottom: 10px;
     }
+
+    /* search bar inside menu */
+    .menu-right form {
+      display: flex;
+      align-items: center;
+    }
+
+    .menu-right input[type="text"] {
+      padding: 5px 10px;
+      font-size: 16px;
+      border: 1px solid #aaa;
+      border-radius: 8px;
+    }
   </style>
 </head>
 
@@ -139,20 +152,20 @@
     <a href="/addInventory" th:if="${user != null and user.admin}">Add Inventory</a>
   </div>
 
-  <!-- right side (logout link) -->
+  <!-- right side of menu(logout) -->
   <div class="menu-right">
+    <form th:action="@{/home}" method="get">
+      <input type="text" name="search" placeholder="Search Shoes...">
+    </form>
     <a href="/logout">Logout</a>
   </div>
 
 </div>
 
-
 <img src="/shoevault-logo.png" alt="ShoeVault Logo" class="logo">
-
 
 <!-- product grid layout -->
 <div class="product-grid">
-
 
   <div class="product-card" th:each="product : ${products}">
 
