@@ -28,4 +28,4 @@ git checkout master
 ## 4. Done! Relax, the hard part has been completed.
 Now you load up the code in IntelliJ. Make sure that Java 22 is configured or code will not run, it should pop up on the top right hand corner.
 If for whatecer reason Maven is giving you trouble you can try
-mvn clean install
+'''mvn clean install
