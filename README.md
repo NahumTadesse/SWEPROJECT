@@ -72,7 +72,7 @@ In this section, we delve into the detailed requirements provided by our client.
 - [Techanical Design Video](https://www.dropbox.com/scl/fi/7oi9wq434r8w90bqlljxn/techDesign.mp4?rlkey=h0r93hvd4itxtzd5p2wf52hjq&st=mbpb80pn&dl=0)
 
 
-#‼️Note‼️
+# ‼️Note‼️
 **All project code is available on the [master branch](https://github.com/NahumTadesse/SWEPROJECT/tree/master).**
 
  # Implementation
