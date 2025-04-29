@@ -4,8 +4,6 @@ Welcome to our repository for the SWE 3313 group project! We welcome to our onli
 ## ‼️Note‼️
 **All project code is available on the [master branch](https://github.com/NahumTadesse/SWEPROJECT/tree/master).**
 
-## live demo!
-Visit: [**Login Page**](http://168.231.112.97:8081/login)
 
 
 # Meet Our Team
@@ -78,3 +76,6 @@ In this section, we delve into the detailed requirements provided by our client.
 - Link to Loom video with setup and website overview [here](https://www.loom.com/share/4871697ce5e64029b6ba2dec53650d8f?sid=398d1fd0-80fa-4972-b66f-c75e665f0d6b)
 - Additional sit features and setup info can be found [here](https://www.loom.com/share/d4db1ceb1fbd420ca01d1511a9abd013?sid=12419880-5041-44af-a283-03e5abf6874b)
 - How to access the site [here](https://www.loom.com/share/20a9512967f34faba75db2be02f9035e?sid=c9d0e180-bfcd-4243-bc71-0e731c2fc622)
+
+ # Live demo!
+ Visit: [**Login Page**](http://168.231.112.97:8081/login)
