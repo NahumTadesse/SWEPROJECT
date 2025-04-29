@@ -145,7 +145,7 @@ public class ShoevaultApplication {
 
             ResultSet rs = stmt.executeQuery("SELECT COUNT(*) FROM products");
             if (rs.next() && rs.getInt(1) == 0) {
-                System.out.println("🌱 Seeding demo products...");
+                System.out.println("Seeding demo products...");
 
                 stmt.executeUpdate("INSERT INTO products (name, description, price, sold, imageUrl) VALUES " +
                         "('Jordan 4 Fire Red', 'Classic Air Jordan style with red, black, and white. Clean colorway and comfortable ride.', 250.00, 0, '/shoe1.png')," +
