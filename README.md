@@ -74,7 +74,7 @@ In this section, we delve into the detailed requirements provided by our client.
  # Implementation
 
 - Link to Loom video with setup and website overview [here](https://www.loom.com/share/4871697ce5e64029b6ba2dec53650d8f?sid=398d1fd0-80fa-4972-b66f-c75e665f0d6b)
-- Additional site features and setup info can be found [here](https://www.loom.com/share/be0250f12ad94be89360d60ef09042c0?sid=bae5518e-4c67-4efd-ad92-fba65e99042e)
+- Additional site features,setup info, and UI comparison can be found [here](https://www.loom.com/share/be0250f12ad94be89360d60ef09042c0?sid=bae5518e-4c67-4efd-ad92-fba65e99042e)
 - How to access the site [here](https://www.loom.com/share/20a9512967f34faba75db2be02f9035e?sid=c9d0e180-bfcd-4243-bc71-0e731c2fc622)
 
  # Cool Stuff:Live demo!
